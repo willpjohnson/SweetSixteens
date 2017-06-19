@@ -70,16 +70,10 @@ the API.
 
 **Objective:** Tracks and Annotations can be upvoted or downvoted by users.
 
-### Phase 6: Allow Complex Styling in Notes (1 day, W2 Th 6pm)
+### Phase 6: Catch up on remaining work / Add tags (1 day)
 
-**Objective:** Allow rich text editing of notes.
+**Objective:** Allow for tracks to be tagged for easier search.
 
-### Phase 7: - Pagination / infinite scroll for Notes Index (1 day, W2 F 6pm)
+### Phase 7: - Catch up on remaining work / Add search (1 day)
 
-**Objective:** Add infinite scroll to Notes Index
-
-### Bonus Features (TBD)
-- [ ] Search notes by content
-- [ ] Set reminders on notes
-- [ ] Changelogs for Notes
-- [ ] Multiple sessions
+**Objective:** Add search feature.

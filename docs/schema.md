@@ -16,6 +16,7 @@ author_id       | integer   | not null, foreign key (references users), indexed
 title           | string    | not null
 body            | text      | not null
 artist          | string    | not null
+image_url       | string    | not null
 
 ## annotations
 column name     | data type | details
