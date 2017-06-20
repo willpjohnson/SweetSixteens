@@ -1,0 +1,43 @@
+.session-form-div {
+  position: absolute;
+  border: 1px solid black;
+  background-color: white;
+  top: 20px;
+  left: 50%;
+  width: 450px;
+  margin-left: -225px;
+  align-items: center;
+  padding: 13px;
+}
+
+.session-form-div > * {
+  padding: 12px;
+}
+
+.session-form-inputs {
+  text-align: center;
+}
+
+.session-form input {
+  height: 23px;
+  margin-top: : 8px;
+  margin-bottom: 8px;
+  font-size: 16px;
+  border: 2px solid #b7b7b7;
+  width: 100%;
+  align-items: center;
+}
+
+.session-form button {
+  height: 40px;
+  background-color: white;
+  border: 2px solid black;
+  font-size: 16px;
+  margin-top: : 8px;
+  margin-bottom: 8px;
+  cursor: pointer;
+}
+
+.session-form-div a {
+  color: #b7b7b7;
+}

@@ -1,0 +1,81 @@
+.navbar-div {
+  height: 80px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #fffc68;
+}
+
+.search-bar-div {
+  width: 15%;
+  margin-left: 20px;
+  margin-right: 20px;
+  text-align: left;
+
+  border: 1px solid black;
+}
+
+.logo-div {
+  width: 15%;
+  margin-left: 20px;
+  margin-right: 20px;
+  text-align: center;
+
+  border: 1px solid black;
+}
+
+.user-div {
+  width: 15%;
+  margin-left: 20px;
+  margin-right: 20px;
+  text-align: right;
+
+  border: 1px solid black;
+}
+
+.user-div h1 {
+  cursor: pointer;
+}
+
+
+.user-dropdown {
+  position: absolute;
+	top: 70px;
+	right: 30px;
+	background-color: #fff;
+	border-radius: 3px;
+	/*padding: 10px;*/
+	width: 200px;
+	z-index: 1;
+	text-align: left;
+	box-shadow: -1px 4px 6px 1px rgba(0,0,0,0.09);
+}
+
+.user-dropdown li:not(:last-child) {
+  border-bottom: 1px solid black;
+}
+.user-dropdown li {
+  padding: 12px;
+}
+
+.user-dropdown-li {
+  cursor: pointer;
+  background-color: white;
+  color: black;
+}
+
+.user-dropdown-li-blue {
+  cursor: pointer;
+  background-color: #96aeff;
+  color: white;
+}
+
+.no-current-user-section {
+  display: flex;
+  justify-content: space-between;
+}
+
+.no-current-user {
+  color: black;
+  text-decoration: none;
+}
