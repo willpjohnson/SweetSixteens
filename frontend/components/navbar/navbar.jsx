@@ -10,6 +10,7 @@ class Navbar extends React.Component {
     this.turnOnDropdown = this.turnOnDropdown.bind(this);
     this.turnOffDropdown = this.turnOffDropdown.bind(this);
     this.handleGuest = this.handleGuest.bind(this);
+    this.handleGoHome = this.handleGoHome.bind(this);
   }
 
   turnOnDropdown() {
@@ -24,13 +25,17 @@ class Navbar extends React.Component {
     this.props.login({user: {username: 'Guest', password: 'password'}});
   }
 
+  handleGoHome() {
+    window.location.href = "/#/";
+  }
+
   render() {
     let userArea;
     if (this.props.currentUser !== null) {
       userArea = (
         <section>
-          <h1 onClick={this.turnOnDropdown}>{this.props.currentUser.username}</h1>
-          {this.state.visible_dropdown ? <UserDropdown logout={this.props.logout} turnOffDropdown={this.turnOffDropdown}/> : <div></div>}
+          <img className="user-avatar" src={this.props.currentUser.avatar_url} onClick={this.turnOnDropdown} />
+          {this.state.visible_dropdown ? <UserDropdown logout={this.props.logout} turnOffDropdown={this.turnOffDropdown} currentUser={this.props.currentUser}/> : <div></div>}
         </section>
       );
     } else {
@@ -48,7 +53,7 @@ class Navbar extends React.Component {
           <h1>SEARCH BAR GOES HERE</h1>
         </div>
 
-        <div className="logo-div">
+        <div className="logo-div" onClick={this.handleGoHome}>
           <h1>LOGO GOES HERE</h1>
         </div>
 

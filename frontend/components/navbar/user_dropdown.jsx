@@ -24,9 +24,16 @@ class UserDropdown extends React.Component {
     this.props.turnOffDropdown();
   }
 
-  handleClick() {
+  handleClick(e) {
     this.props.turnOffDropdown();
-    this.props.logout();
+    switch (e.currentTarget.textContent) {
+      case "Sign Out":
+        this.props.logout();
+        break;
+      case "View Profile":
+        window.location.href = `/#/users/${this.props.currentUser.id}`;
+        break;
+    }
   }
 
   render() {
@@ -36,8 +43,10 @@ class UserDropdown extends React.Component {
         <ul className="user-dropdown">
           <li>ACCOUNT</li>
           <li
-            onMouseOver={this.turnOnHighlight}
-            onMouseOut={this.turnOffHighlight}
+            className={this.state.liClass}
+            onClick={this.handleClick}>View Profile
+          </li>
+          <li
             onClick={this.handleClick}
             className={this.state.liClass}>Sign Out
           </li>
