@@ -30,11 +30,12 @@
   margin-right: 20px;
   text-align: right;
 
-  border: 1px solid black;
+  /*border: 1px solid black;*/
 }
 
 .user-div h1 {
   cursor: pointer;
+  float: right;
 }
 
 
@@ -46,7 +47,7 @@
 	border-radius: 3px;
 	/*padding: 10px;*/
 	width: 200px;
-	z-index: 1;
+	z-index: 2;
 	text-align: left;
 	box-shadow: -1px 4px 6px 1px rgba(0,0,0,0.09);
 }
@@ -78,4 +79,15 @@
 .no-current-user {
   color: black;
   text-decoration: none;
+}
+
+.user-dropdown-hider {
+  /*background-color: black;
+  opacity: 0.1;*/
+  position: absolute;
+  z-index: 1;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  right: 0;
 }

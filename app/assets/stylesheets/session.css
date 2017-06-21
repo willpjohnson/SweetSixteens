@@ -8,10 +8,21 @@
   margin-left: -225px;
   align-items: center;
   padding: 13px;
+  z-index: 2;
 }
 
 .session-form-div > * {
   padding: 12px;
+}
+
+.session-form-hider {
+  background-color: black;
+  opacity: 0.4;
+  top: 0;
+  height: 100vh;
+  width: 100vw;
+  z-index: 1;
+  position: absolute;
 }
 
 .session-form-inputs {
@@ -40,4 +51,15 @@
 
 .session-form-div a {
   color: #b7b7b7;
+}
+
+.auth-errors {
+  margin-top: : 8px;
+  margin-bottom: 8px;
+  padding: 8px;
+  text-align: left;
+  width: auto;
+  background-color: red;
+  color: white;
+  float: left;
 }

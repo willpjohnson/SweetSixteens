@@ -7,16 +7,17 @@ class Navbar extends React.Component {
     super(props);
     this.state = {'visible_dropdown': false};
 
-    this.toggleDropdown = this.toggleDropdown.bind(this);
+    this.turnOnDropdown = this.turnOnDropdown.bind(this);
+    this.turnOffDropdown = this.turnOffDropdown.bind(this);
     this.handleGuest = this.handleGuest.bind(this);
   }
 
-  toggleDropdown() {
-    if (this.state.visible_dropdown) {
-      this.setState({'visible_dropdown': false});
-    } else {
-      this.setState({'visible_dropdown': true});
-    }
+  turnOnDropdown() {
+    this.setState({'visible_dropdown': true});
+  }
+
+  turnOffDropdown() {
+    this.setState({'visible_dropdown': false});
   }
 
   handleGuest() {
@@ -27,9 +28,9 @@ class Navbar extends React.Component {
     let userArea;
     if (this.props.currentUser !== null) {
       userArea = (
-        <section id="blech">
-          <h1 onClick={this.toggleDropdown}>{this.props.currentUser.username}</h1>
-          {this.state.visible_dropdown ? <UserDropdown logout={this.props.logout} /> : <div></div>}
+        <section>
+          <h1 onClick={this.turnOnDropdown}>{this.props.currentUser.username}</h1>
+          {this.state.visible_dropdown ? <UserDropdown logout={this.props.logout} turnOffDropdown={this.turnOffDropdown}/> : <div></div>}
         </section>
       );
     } else {

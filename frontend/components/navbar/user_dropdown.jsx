@@ -8,6 +8,8 @@ class UserDropdown extends React.Component {
 
     this.turnOnHighlight = this.turnOnHighlight.bind(this);
     this.turnOffHighlight = this.turnOffHighlight.bind(this);
+    this.handleExit = this.handleExit.bind(this);
+    this.handleClick = this.handleClick.bind(this);
   }
 
   turnOnHighlight() {
@@ -18,17 +20,29 @@ class UserDropdown extends React.Component {
     this.setState({liClass: "user-dropdown-li"});
   }
 
+  handleExit() {
+    this.props.turnOffDropdown();
+  }
+
+  handleClick() {
+    this.props.turnOffDropdown();
+    this.props.logout();
+  }
+
   render() {
     return(
-      <ul className="user-dropdown">
-        <li>ACCOUNT</li>
-        <li
-          onMouseOver={this.turnOnHighlight}
-          onMouseOut={this.turnOffHighlight}
-          onClick={this.props.logout}
-          className={this.state.liClass}>Sign Out
-        </li>
-      </ul>
+      <div>
+        <div className="user-dropdown-hider"      onClick={this.handleExit}></div>
+        <ul className="user-dropdown">
+          <li>ACCOUNT</li>
+          <li
+            onMouseOver={this.turnOnHighlight}
+            onMouseOut={this.turnOffHighlight}
+            onClick={this.handleClick}
+            className={this.state.liClass}>Sign Out
+          </li>
+        </ul>
+      </div>
     );
   }
 }

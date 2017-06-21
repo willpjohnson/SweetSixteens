@@ -11,12 +11,18 @@ class SessionForm extends React.Component {
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleExit = this.handleExit.bind(this);
   }
 
   update(field) {
     return e => {
       this.setState({[field]: e.currentTarget.value});
     };
+  }
+
+  handleExit(e) {
+    e.preventDefault();
+    window.location.href = '/';
   }
 
   handleSubmit(e) {
@@ -26,7 +32,6 @@ class SessionForm extends React.Component {
   }
 
   render() {
-    //debugger
     const buttonText = this.props.formType === 'login' ? 'Sign In' : 'Sign Up';
     let headerText;
     let footerText;
@@ -38,31 +43,42 @@ class SessionForm extends React.Component {
       footerText = (<Link to="/login">ALREADY HAVE AN ACCOUNT? SIGN IN HERE</Link>);
     }
 
+    let errors = [];
+    if (this.props.errors) {
+      this.props.errors.forEach( (error, index) => {
+        errors.push(<p className="auth-errors" key={index}>{error}</p>);
+      });
+
+    }
+
     if (this.props.loggedIn) {
       return (<Redirect to="/" />);
     } else {
       return (
-        <div className="session-form-div">
-          {headerText}
-          <form className="session-form" onSubmit={this.handleSubmit}>
-            <div className="session-form-inputs">
-              <input
-                onChange={this.update("username")}
-                type="text"
-                value={this.state.username}
-                placeholder="Username"
-              />
-              <input
-                onChange={this.update("password")}
-                type="password"
-                value={this.state.password}
-                placeholder="Password"
-              />
-            </div>
+        <div>
+          <div onClick={this.handleExit} className="session-form-hider"></div>
+          <div className="session-form-div">
+            {headerText}
+            <form className="session-form" onSubmit={this.handleSubmit}>
+              <div className="session-form-inputs">
+                {errors}
+                <input
+                  onChange={this.update("username")}
+                  type="text"
+                  value={this.state.username}
+                  placeholder="Username"
+                />
+                <input
+                  onChange={this.update("password")}
+                  type="password"
+                  value={this.state.password}
+                  placeholder="Password"
+                />
+              </div>
               <button>{buttonText}</button><br />
               {footerText}
-              {this.props.errors}
-          </form>
+            </form>
+          </div>
         </div>
       );
     }
