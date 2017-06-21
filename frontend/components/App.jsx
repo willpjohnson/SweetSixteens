@@ -1,9 +1,10 @@
 import React from 'react';
 import { Route } from 'react-router-dom';
+import { AuthRoute } from '../util/route_util';
 import SessionFormContainer from './session_form_container';
 import NavbarContainer from './navbar/navbar_container';
 import UserShowContainer from './user_show_container';
-import { AuthRoute } from '../util/route_util';
+import TrackShowContainer from './track/track_show_container';
 
 const App = () => (
   <div>
@@ -12,6 +13,7 @@ const App = () => (
     <AuthRoute path="/login" component={SessionFormContainer} />
     <AuthRoute path="/signup" component={SessionFormContainer} />
     <Route path="/users/:id" component={UserShowContainer}/>
+    <Route path="/tracks/:id" component={TrackShowContainer}/>
   </div>
 );
 
