@@ -22,7 +22,7 @@ class SessionForm extends React.Component {
 
   handleExit(e) {
     e.preventDefault();
-    window.location.href = '/';
+    this.props.history.replace(this.props.location.pathname);
   }
 
   handleSubmit(e) {
@@ -37,10 +37,10 @@ class SessionForm extends React.Component {
     let footerText;
     if (this.props.formType === 'login') {
       headerText = (<h1>SIGN IN TO GENIUS</h1>);
-      footerText = (<Link to="/signup">CREATE AN ACCOUNT</Link>);
+      footerText = (<Link to={`${this.props.location.pathname}?signup=true`}>CREATE AN ACCOUNT</Link>);
     } else {
       headerText = (<h1>SIGN UP FOR GENIUS</h1>);
-      footerText = (<Link to="/login">ALREADY HAVE AN ACCOUNT? SIGN IN HERE</Link>);
+      footerText = (<Link to={`${this.props.location.pathname}?login=true`}>ALREADY HAVE AN ACCOUNT? SIGN IN HERE</Link>);
     }
 
     let errors = [];

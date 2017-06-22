@@ -1,5 +1,5 @@
 import React from 'react';
-import { Route } from 'react-router-dom';
+import { Route, withRouter } from 'react-router-dom';
 import { AuthRoute } from '../util/route_util';
 import SessionFormContainer from './session_form_container';
 import NavbarContainer from './navbar/navbar_container';
@@ -7,18 +7,29 @@ import UserShowContainer from './user_show_container';
 import TrackShowContainer from './track/track_show_container';
 import TrackIndexContainer from './track/track_index_container';
 
-const App = () => (
-  <div>
-    <NavbarContainer />
+const App = (props) => {
+  let authForm;
+  if(props.location.search === "?login=true") {
+    authForm = (<SessionFormContainer formType="login"/>);
+  } else if (props.location.search === "?signup=true") {
+    authForm = (<SessionFormContainer formType="signup"/>);
+  } else {
+    authForm = null;
+  }
+  return(
+    <div>
+      <NavbarContainer />
 
-    <AuthRoute path="/login" component={SessionFormContainer} />
-    <AuthRoute path="/signup" component={SessionFormContainer} />
-    <Route exact path="/" component={TrackIndexContainer} />
-    <Route exact path="/login" component={TrackIndexContainer} />
-    <Route exact path="/signup " component={TrackIndexContainer} />
-    <Route path="/users/:id" component={UserShowContainer}/>
-    <Route path="/tracks/:id" component={TrackShowContainer}/>
-  </div>
-);
+      {authForm}
 
-export default App;
+      <AuthRoute path="/login" component={SessionFormContainer} />
+      <AuthRoute path="/signup" component={SessionFormContainer} />
+
+      <Route exact path="/" component={TrackIndexContainer} />
+      <Route path="/users/:id" component={UserShowContainer}/>
+      <Route path="/tracks/:id" component={TrackShowContainer}/>
+    </div>
+  );
+};
+
+export default withRouter(App);

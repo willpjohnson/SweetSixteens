@@ -8,7 +8,7 @@
   margin-left: -225px;
   align-items: center;
   padding: 13px;
-  z-index: 2;
+  z-index: 10;
 }
 
 .session-form-div > * {
@@ -23,6 +23,7 @@
   width: 100vw;
   z-index: 1;
   position: absolute;
+  z-index: 9;
 }
 
 .session-form-inputs {

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link, Route, NavLink } from 'react-router-dom';
+import { Link, Route, NavLink, withRouter } from 'react-router-dom';
 import UserDropdown from './user_dropdown';
 
 class Navbar extends React.Component {
@@ -41,8 +41,8 @@ class Navbar extends React.Component {
     } else {
       userArea = (
         <section className="no-current-user-section">
-          <h1><Link className="no-current-user" to="/signup">SIGN UP</Link></h1>
-          <h1><Link className="no-current-user" to="/login">SIGN IN</Link></h1>
+          <h1><Link className="no-current-user" to={`${this.props.location.pathname}?signup=true`}>SIGN UP</Link></h1>
+          <h1><Link className="no-current-user" to={`${this.props.location.pathname}?login=true`}>SIGN IN</Link></h1>
           <h1 onClick={this.handleGuest}>GUEST</h1>
         </section>
       );

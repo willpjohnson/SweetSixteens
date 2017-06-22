@@ -29,7 +29,7 @@ class UserDropdown extends React.Component {
     switch (e.currentTarget.textContent) {
       case "Sign Out":
         this.props.logout();
-        window.location.href = '/';
+        window.location.href = `/#/`;
         break;
       case "View Profile":
         window.location.href = `/#/users/${this.props.currentUser.id}`;
