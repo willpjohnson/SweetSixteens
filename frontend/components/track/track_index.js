@@ -18,7 +18,7 @@ class TrackIndex extends React.Component {
       if (index < 3) {
         topThree = "track-index-link-top";
         metadataDiv = (
-          <div className="track-index-list-metadata">
+          <div className="track-index-list-metadata-top">
             <h1>{track.title}</h1>
             <h2>{track.artist}</h2>
           </div>
@@ -26,7 +26,9 @@ class TrackIndex extends React.Component {
       } else {
         topThree = "track-index-link-bottom";
         metadataDiv = (
-          <h1>{track.title} by {track.artist}</h1>
+          <div className="track-index-list-metadata-bottom">
+            <h1>{track.title} by {track.artist}</h1>
+          </div>
         );
       }
 
@@ -50,8 +52,17 @@ class TrackIndex extends React.Component {
               {trackLis}
             </ul>
           </div>
-          <div className="track-index-genre-div">
 
+          <div className="track-index-genre-div">
+            <div className="track-index-genre-dummy"></div>
+            <ul className="track-index-genre-list">
+              <li><NavLink className="genre-nav" to="/">ALL GENRES</NavLink></li>
+              <li><NavLink className="genre-nav" to="/">RAP</NavLink></li>
+              <li><NavLink className="genre-nav" to="/">POP</NavLink></li>
+              <li><NavLink className="genre-nav" to="/">ROCK</NavLink></li>
+              <li><NavLink className="genre-nav" to="/">R&B</NavLink></li>
+              <li><NavLink className="genre-nav" to="/">COUNTRY</NavLink></li>
+            </ul>
           </div>
         </div>
       );

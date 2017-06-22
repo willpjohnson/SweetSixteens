@@ -4,15 +4,12 @@
   margin-top: 30px;
   display: flex;
   justify-content: space-between;
-
-  border: 1px solid black;
 }
 
 /*LIST SECION*/
 .track-index-list-div {
-  width: 60%;
+  width: 70%;
   padding: 5% 1% 5% 5%;
-  border: 1px solid black;
 }
 
 .track-index-list-div h2 {
@@ -21,15 +18,21 @@
 }
 
 .track-index-list li {
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid #969696;
 }
 
 .track-index-list li:first-child {
   border-top: 3px solid black;
 }
 
-.track-index-list-metadata {
-  display: block;
+.track-index-list-metadata-bottom {
+  display: flex;
+  margin-left: 10px;
+}
+
+.track-index-list-metadata-top {
+  /*display: flex;*/
+  margin: auto 0 auto 10px;
 }
 
 .track-index-link-bottom {
@@ -62,6 +65,7 @@
 .track-index-link-top h1 {
   font-size: 20px;
   color: black;
+  font-weight: 900;
 }
 
 .track-index-link-bottom h2 {
@@ -79,7 +83,7 @@
   font-weight: 900;
   color: black;
 
-  margin: auto 10px auto 10px;
+  margin: auto 14px auto 14px;
   width: 35px;
   height: 35px;
   border-radius: 50%;
@@ -87,8 +91,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-
-  border: 4px solid white;
 }
 
 .track-index-link-top h3 {
@@ -107,9 +109,55 @@
 
   border: 4px solid black;
 }
+
+.track-index-link-bottom:hover {
+  background-color: #efefff;
+}
+
+.track-index-link-top:hover {
+  background-color: #efefff;
+}
+
 /*GENRE SECION*/
 .track-index-genre-div {
-  width: 30%;
+  width: 20%;
   padding: 5% 5% 5% 1%;
-  border: 1px solid black;
+}
+
+.track-index-genre-dummy {
+  /*this is to simulate the height of the 'TOP SONGS' h1*/
+  width: 100%;
+  height: 25px;
+}
+
+.genre-nav {
+  color: #969696;
+  width: 100%;
+  height: 45px;
+  font-size: 13px;
+  font-weight: 900;
+  text-decoration: none;
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.track-index-genre-list li {
+  border-bottom: 1px solid #969696;
+  width: 100%;
+  height: 45px;
+  padding-left: 10px;
+  align-items: center;
+  display: table;
+}
+
+.track-index-genre-list li:first-child {
+  border-top: 3px solid black;
+}
+
+.track-index-genre-list li:last-child {
+  border-bottom: 3px hidden black;
+}
+
+.track-index-genre-list li:hover {
+  background-color: #efefff;
 }

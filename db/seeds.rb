@@ -34,3 +34,27 @@ humble = Track.create({
   body: "I remember syrup sandwiches and gram allowances",
   artist: "Kendrick Lamar",
   image_url: "https://images.genius.com/4387b0bcc88e07676997ba73793cc73c.1000x1000x1.jpg"})
+putp = Track.create({
+  author_id: will.id,
+  title: "Pick Up the Phone",
+  body: "Pick up the phone, baby. I know you're home, baby.",
+  artist: "Young Thug",
+  image_url: "https://upload.wikimedia.org/wikipedia/en/thumb/3/3f/PickUpThePhoneYoungThug.jpg/220px-PickUpThePhoneYoungThug.jpg"})
+tdial = Track.create({
+  author_id: will.id,
+  title: "The Devil is a Lie",
+  body: "The devil is a lie. Bitch, I'm the truth. The devil is a lie. Bitch, I'm the proof",
+  artist: "Rick Ross",
+  image_url: "http://hiphop-n-more.com/wp-content/uploads/2013/12/rick-ross-devil-is-a-lie.jpg"})
+doys = Track.create({
+  author_id: will.id,
+  title: "Dirt Off Your Shoulder",
+  body: "Ladies is pimps too, gon brush your shoulders off",
+  artist: "Jay Z",
+  image_url: "https://images-na.ssl-images-amazon.com/images/I/5166AAZKFCL._SY300_.jpg"})
+fl = Track.create({
+  author_id: will.id,
+  title: "Flashing Lights",
+  body: "She don't believe in shooting stars, but she believe in shoes and cars",
+  artist: "Kanye West",
+  image_url: "https://images-na.ssl-images-amazon.com/images/I/51gE5fyNEDL.jpg"})

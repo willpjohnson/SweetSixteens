@@ -14,6 +14,8 @@ const App = () => (
     <AuthRoute path="/login" component={SessionFormContainer} />
     <AuthRoute path="/signup" component={SessionFormContainer} />
     <Route exact path="/" component={TrackIndexContainer} />
+    <Route exact path="/login" component={TrackIndexContainer} />
+    <Route exact path="/signup " component={TrackIndexContainer} />
     <Route path="/users/:id" component={UserShowContainer}/>
     <Route path="/tracks/:id" component={TrackShowContainer}/>
   </div>
