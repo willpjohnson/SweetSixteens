@@ -10,9 +10,14 @@ class TrackShow extends React.Component {
     this.props.fetchTrack(this.props.trackId);
   }
 
+  componentWillReceiveProps(nextProps) {
+    if (nextProps.trackId !== this.props.trackId) {
+      this.props.fetchTrack(nextProps.trackId);
+    }
+  }
+
   render() {
     if (this.props.track.id === this.props.trackId) {
-      debugger
       return(
         <div className="track-show-div">
           <div className="track-show-banner">

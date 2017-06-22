@@ -16,10 +16,10 @@ document.addEventListener('DOMContentLoaded', () => {
     store = configureStore();
   }
 
-  window.store = store;
-  window.signup = signup;
-  window.login = login;
-  window.logout = logout;
+  // window.store = store;
+  // window.signup = signup;
+  // window.login = login;
+  // window.logout = logout;
   window.getState = store.getState;
   window.dispatch = store.dispatch;
 

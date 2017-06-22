@@ -4,7 +4,7 @@ import { fetchTrack } from '../../actions/track_actions';
 
 const mapStateToProps = (state, ownProps) => {
   const trackId = parseInt(ownProps.match.params.id);
-  const track = state.track;
+  const track = state.track.currentTrack;
   return({
     trackId,
     track

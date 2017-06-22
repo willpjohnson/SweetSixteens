@@ -1,0 +1,115 @@
+.track-index-div {
+  width: 75%;
+  margin: 0 auto;
+  margin-top: 30px;
+  display: flex;
+  justify-content: space-between;
+
+  border: 1px solid black;
+}
+
+/*LIST SECION*/
+.track-index-list-div {
+  width: 60%;
+  padding: 5% 1% 5% 5%;
+  border: 1px solid black;
+}
+
+.track-index-list-div h2 {
+  font-size: 14px;
+  padding-bottom: 11px;
+}
+
+.track-index-list li {
+  border-bottom: 1px solid black;
+}
+
+.track-index-list li:first-child {
+  border-top: 3px solid black;
+}
+
+.track-index-list-metadata {
+  display: block;
+}
+
+.track-index-link-bottom {
+  display: flex;
+  text-decoration: none;
+}
+
+.track-index-link-top {
+  display: flex;
+  text-decoration: none;
+}
+
+.track-index-link-bottom img {
+  height: 55px;
+  width: 55px;
+}
+
+.track-index-link-top img {
+  height: 80px;
+  width: 80px;
+}
+
+.track-index-link-bottom h1 {
+  font-weight: 900;
+  color: black;
+  margin: auto 0 auto 0;
+  font-size: auto;
+}
+
+.track-index-link-top h1 {
+  font-size: 20px;
+  color: black;
+}
+
+.track-index-link-bottom h2 {
+  font-size: 13px;
+  color: black;
+}
+
+.track-index-link-top h2 {
+  font-size: 15px;
+  color: black;
+}
+
+.track-index-link-bottom h3 {
+  font-size: 20px;
+  font-weight: 900;
+  color: black;
+
+  margin: auto 10px auto 10px;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  border: 4px solid white;
+}
+
+.track-index-link-top h3 {
+  font-size: 20px;
+  font-weight: 900;
+  color: black;
+
+  margin: auto 10px auto 10px;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  border: 4px solid black;
+}
+/*GENRE SECION*/
+.track-index-genre-div {
+  width: 30%;
+  padding: 5% 5% 5% 1%;
+  border: 1px solid black;
+}

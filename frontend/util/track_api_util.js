@@ -6,3 +6,12 @@ export const fetchTrack = (id) => {
     })
   );
 };
+
+export const fetchTracks = () => {
+  return(
+    $.ajax({
+      method: 'GET',
+      url: `/api/tracks`
+    })
+  );
+};
