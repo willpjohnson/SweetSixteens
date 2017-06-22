@@ -17,21 +17,30 @@ class TrackShow extends React.Component {
   }
 
   render() {
-    if (this.props.track.id === this.props.trackId) {
+    const track = this.props.track;
+    if (track.id === this.props.trackId) {
       return(
         <div className="track-show-div">
           <div className="track-show-banner">
-            <img className="track-show-background" src={this.props.track.image_url}></img>
+            <div className="track-show-background-cover" />
+            <div className="track-show-blur-overflow">
+              <img className="track-show-background" src={track.image_url}></img>
+            </div>
 
             <div className="track-show-info-div">
-              <img className="track-image" src={this.props.track.image_url}></img>
+              <img className="track-image" src={track.image_url}></img>
               <div className="track-show-info-metadata">
-                <h1>{this.props.track.title}</h1>
-                <h2>{this.props.track.artist}</h2>
+                <h1>{track.title}</h1>
+                <h2>{track.artist}</h2>
               </div>
             </div>
           </div>
 
+          <div className="track-show-lyrics-and-annotations-div">
+            <div className="track-show-lyrics-div">
+              <p>{track.body}</p>
+            </div>
+          </div>
         </div>
       );
     } else {
