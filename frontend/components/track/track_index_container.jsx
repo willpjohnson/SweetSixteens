@@ -4,7 +4,7 @@ import { fetchTracks } from '../../actions/track_actions';
 import { values } from 'lodash';
 
 const mapStateToProps = (state) => {
-  const tracks = values(state.track.entities);
+  const tracks = state.track.entities;
   return({
     tracks
   });

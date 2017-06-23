@@ -33,7 +33,8 @@ class Navbar extends React.Component {
     let userArea;
     if (this.props.currentUser !== null) {
       userArea = (
-        <section>
+        <section className="yes-current-user-section">
+          <div className="add-track"><Link to="/new-track">ADD TRACK</Link></div>
           <img className="user-avatar" src={this.props.currentUser.avatar_url} onClick={this.turnOnDropdown} />
           {this.state.visible_dropdown ? <UserDropdown logout={this.props.logout} turnOffDropdown={this.turnOffDropdown} currentUser={this.props.currentUser}/> : <div></div>}
         </section>

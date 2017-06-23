@@ -26,7 +26,6 @@ export const signup = (user) => dispatch => {
 };
 
 export const receiveCurrentUser = (currentUser) => {
-  //# debugger
   return({
     type: RECEIVE_CURRENT_USER,
     currentUser
@@ -34,7 +33,6 @@ export const receiveCurrentUser = (currentUser) => {
 };
 
 export const receiveErrors = (errors) => {
-  // debugger
   return({
     type: RECEIVE_ERRORS,
     errors

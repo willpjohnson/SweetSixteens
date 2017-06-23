@@ -30,8 +30,6 @@
   margin-left: 20px;
   margin-right: 20px;
   text-align: right;
-
-  /*border: 1px solid black;*/
 }
 
 .user-div h1 {
@@ -39,7 +37,19 @@
   float: right;
 }
 
+.add-track {
+  font-size: 14px;
+}
+
+.add-track * {
+  text-decoration: none;
+  color: black;
+}
+
 .user-avatar {
+  height: 40px;
+  border-radius: 25px;
+  border: 1px solid white;
   cursor: pointer;
 }
 
@@ -76,6 +86,12 @@
   color: white;
 }
 
+.yes-current-user-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
 .no-current-user-section {
   display: flex;
   justify-content: space-between;
@@ -95,10 +111,4 @@
   height: 100vh;
   top: 0;
   right: 0;
-}
-
-.user-avatar {
-  height: 40px;
-  border-radius: 25px;
-  border: 1px solid white;
 }

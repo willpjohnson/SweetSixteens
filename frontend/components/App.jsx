@@ -6,6 +6,7 @@ import NavbarContainer from './navbar/navbar_container';
 import UserShowContainer from './user_show_container';
 import TrackShowContainer from './track/track_show_container';
 import TrackIndexContainer from './track/track_index_container';
+import NewTrackContainer from './track/new_track_container';
 
 const App = (props) => {
   let authForm;
@@ -26,8 +27,10 @@ const App = (props) => {
       <AuthRoute path="/signup" component={SessionFormContainer} />
 
       <Route exact path="/" component={TrackIndexContainer} />
+
       <Route path="/users/:id" component={UserShowContainer}/>
-      <Route path="/tracks/:id" component={TrackShowContainer}/>
+      <Route exact path="/tracks/:id" component={TrackShowContainer}/>
+      <Route exact path="/new-track" component={NewTrackContainer}/>
     </div>
   );
 };

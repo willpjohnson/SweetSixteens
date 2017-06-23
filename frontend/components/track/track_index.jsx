@@ -19,30 +19,30 @@ class TrackIndex extends React.Component {
         topThree = "track-index-link-top";
         metadataDiv = (
           <div className="track-index-list-metadata-top">
-            <h1>{track.title}</h1>
-            <h2>{track.artist}</h2>
+          <h1>{track.title}</h1>
+          <h2>{track.artist}</h2>
           </div>
         );
       } else {
         topThree = "track-index-link-bottom";
         metadataDiv = (
           <div className="track-index-list-metadata-bottom">
-            <h1>{track.title} by {track.artist}</h1>
+          <h1>{track.title} by {track.artist}</h1>
           </div>
         );
       }
 
       return(
         <li key={index}>
-          <Link className={topThree} to={`/tracks/${track.id}`}>
-            <h3><div>{index+1}</div></h3>
-            <img src={track.image_url}></img>
-            {metadataDiv}
-          </Link>
+        <Link className={topThree} to={`/tracks/${track.id}`}>
+        <h3><div>{index+1}</div></h3>
+        <img src={track.image_url}></img>
+        {metadataDiv}
+        </Link>
         </li>
       );
     });
-
+    
     if (this.props.tracks) {
       return(
         <div className="track-index-div">

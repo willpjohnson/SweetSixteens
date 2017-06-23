@@ -1,0 +1,68 @@
+.new-track-form-background {
+  background-color: black;
+
+  height: 100vh;
+  width: 100%;
+}
+
+.new-track-form-div {
+  width: 70%;
+  height: 100%;
+  margin: 0 auto;
+  padding-top: 25px;
+
+  color: white;
+}
+
+.new-track-form-div h1 {
+  font-family: 'Fjalla One', sans-serif;
+  font-size: 35px;
+}
+
+.ntf-primary-info-header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+  padding: 3px 0;
+
+  border-bottom: 1px solid #969696;
+}
+
+.ntf-primary-info-header h3 {
+  font-size: 13px;
+}
+
+.ntf-primary-info-div {
+  width: 50%;
+}
+
+.new-track-form label {
+  font-size: 13px;
+  color: #969696;
+}
+
+.ntf-label-div {
+  padding: 22px;
+}
+
+.ntf-input-text {
+  width: 100%;
+  height: 28px;
+  border-radius: 4px;
+
+  font-size: 14px;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.area {
+  height: 500px;
+}
+
+.radio {
+  margin-left: 15px;
+}
+
+.ntf-submit {
+  margin-left: 22px;
+}

@@ -15,3 +15,15 @@ export const fetchTracks = () => {
     })
   );
 };
+
+export const createTrack = (formData) => {
+  return(
+    $.ajax({
+      method: 'POST',
+      url: `/api/tracks`,
+      data: formData,
+      contentType: false,
+      processData: false
+    })
+  );
+};

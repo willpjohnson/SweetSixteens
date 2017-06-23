@@ -9,8 +9,17 @@ class Api::TracksController < ApplicationController
     render :index
   end
 
+  def create
+    @track = Track.new(track_params)
+    if @track.save
+      render :show
+    else
+      render json: @track.errors.full_messages, status: 422
+    end
+  end
+
   private
   def track_params
-    params.require(:track).permit(:author_id, :title, :body, :artist, :image_url)
+    params.require(:track).permit(:author_id, :title, :body, :artist, :image)
   end
 end

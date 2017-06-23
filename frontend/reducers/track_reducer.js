@@ -3,7 +3,7 @@ import merge from 'lodash/merge';
 import { RECEIVE_TRACK, RECEIVE_TRACKS } from '../actions/track_actions';
 
 const defaultState = {
-  entities: {},
+  entities: [],
   currentTrack: {}
 };
 
