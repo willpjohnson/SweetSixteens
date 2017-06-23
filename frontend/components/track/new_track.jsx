@@ -109,11 +109,15 @@ class NewTrackForm extends React.Component {
               </label></div>
             </div>
 
-            <div>
+            <div className="ntf-additional-header">
+              <h2>Additional data</h2>
+            </div>
+
+            <div className="ntf-additional-div">
               <div className="ntf-label-div"><label>IMAGE<br />
-                <input type="file" onChange={this.updateFile}/>
-              </label>
-              <img src={this.state.imageUrl} />
+                  <input type="file" onChange={this.updateFile}/>
+                </label>
+                <img className="ntf-image-preview" src={this.state.imageUrl} />
               </div>
             </div>
 

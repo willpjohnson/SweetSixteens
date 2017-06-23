@@ -1,6 +1,6 @@
 import React from 'react';
 import { Route, withRouter } from 'react-router-dom';
-import { AuthRoute } from '../util/route_util';
+import { AuthRoute, ProtectedRoute } from '../util/route_util';
 import SessionFormContainer from './session_form_container';
 import NavbarContainer from './navbar/navbar_container';
 import UserShowContainer from './user_show_container';
@@ -30,7 +30,7 @@ const App = (props) => {
 
       <Route path="/users/:id" component={UserShowContainer}/>
       <Route exact path="/tracks/:id" component={TrackShowContainer}/>
-      <Route exact path="/new-track" component={NewTrackContainer}/>
+      <ProtectedRoute exact path="/new-track" component={NewTrackContainer}/>
     </div>
   );
 };

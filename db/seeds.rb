@@ -6,96 +6,19 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 User.destroy_all
-will = User.create({username: 'willpjohnson', password: 'fullstack'})
+will = User.create({username: 'willpjohnson', password: 'fullstack', avatar: File.open('app/assets/images/admin.jpg')})
 guest = User.create({username: 'Guest', password: 'password'});
 
+pyn_pic = File.open('app/assets/images/pyn_pic.jpg')
+so_pic = File.open('app/assets/images/so_pic.jpg')
+humble_pic = File.open('app/assets/images/humble_pic.jpg')
+putp_pic = File.open('app/assets/images/putp_pic.jpg')
+tdial_pic = File.open('app/assets/images/tdial_pic.jpg')
+doys_pic = File.open('app/assets/images/doys_pic.jpg')
+fl_pic = File.open('app/assets/images/fl_pic.png')
+jaf_pic = File.open('app/assets/images/jaf_pic.jpg')
+
 Track.destroy_all
-jaf = Track.create({
-  author_id: will.id,
-  title: "Just A Friend",
-  body: "[Verse 1]
-Have you ever met a girl that you tried to date
-But a year to make love she wanted you to wait
-Let me tell ya a story of my situation
-I was talkin' to this girl from the U.S. nation
-The way that I met her was on tour at a concert
-She had long hair and a short miniskirt
-I just got onstage drippin', pourin' with sweat
-I was walkin' through the crowd and gues who I met
-I whispered in her ear, come to the picture booth
-So I can ask you some questions to see if you are a hundred proof
-I asked her her name, she said blah-blah-blah
-She had 9/10 pants and a very big bra
-I took a couple of flicks and she was enthused
-I said, how do you like the show?
-She said, \"I was very amused\"
-I started throwin' bass, she started throwin' back mid-range
-But when I sprung the question, she acted kind of strange
-Then when I asked, do ya have a man, she tried to pretend
-She said, \"no I don\'t, I only have a friend\"
-Come on, I\'m not even goin' for it
-This is what I\'m goin\' sing
-
-[Chorus]
-You, you got what I need but you say he's just a friend
-And you say he's just a friend, oh baby
-You, you got what I need but you say he's just a friend
-But you say he's just a friend, oh baby
-You, you got what I need but you say he's just a friend
-But you say he's just a friend
-
-[Verse 2]
-So I took blah-blah's word for it at this time
-I thought just havin' a friend couldn't be no crime
-'Cause I have friends and that's a fact
-Like Agnes, Agatha, Germaine, and Jacq
-Forget about that, let's go into the story
-About a girl named blah-blah-blah that adored me
-So we started talkin', getttin' familiar
-Spendin' a lot of time so we can build up
-A relationship or some understanding
-How it's gonna be in the future we was plannin'
-Everything sounded so dandy and sweet
-I had no idea I was in for a treat
-After this was established, everything was cool
-The tour was over and she went back to school
-I called every day to see how she was doin'
-Every time that I called her it seemed somethin' was brewin'
-I called her on my dime, picked up, and then I called again
-I said, yo, who was that? Oh, he's just a friend
-Don't gimme that, don't ever gimme that
-Jus' bust this
-
-[Chorus]
-You, you got what I need but you say he's just a friend
-And you say he's just a friend, oh baby
-You, you got what I need but you say he's just a friend
-But you say he's just a friend, oh baby
-You, you got what I need but you say he's just a friend
-But you say he's just a friend
-
-[Verse 3]
-So I came to her college on a surprise visit
-To see my girl that was so exquisite
-It was a school day, I knew she was there
-The first semester of the school year
-I went to a gate to ask where was her dorm
-This guy made me fill out a visitor's form
-He told me where it was and I as on my way
-To see my baby doll, I was happy to say
-I arrived in front of the dormitory
-Yo, could you tell me where is door three?
-They showed me where it was for the moment
-I didn't know I was in for such an event
-So I came to her room and opened the door
-Oh, snap! Guess what I saw?
-A fella tongue-kissin' my girl in the mouth,
-I was so in shock my heart went down south
-So please listen to the message that I say
-Don't ever talk to a girl who says she just has a friend",
-  artist: "Biz Markie"})
-
-
 
 pyn = Track.create({
   author_id: will.id,
@@ -245,7 +168,8 @@ You best protect ya neck
 You best protect ya neck
 You best protect ya neck
 You best protect ya neck",
-  artist: "Wu Tang Clan"})
+  artist: "Wu Tang Clan",
+  image: pyn_pic})
 
 
 
@@ -353,7 +277,8 @@ G-yeah, the whole Bridge
 Queens get the money
 41st side, keepin' it real, you know
 Queens get the money",
-  artist: "Mobb Deep"})
+  artist: "Mobb Deep",
+  image: so_pic})
 
 
 
@@ -436,7 +361,8 @@ Be humble (hol' up, hol' up)
 Bitch, sit down (hol' up, hol' up, lil' bitch)
 Be humble (lil' bitch, hol' up, bitch)
 Sit down (hol' up, hol' up, hol' up, hol' up)",
-  artist: "Kendrick Lamar"})
+  artist: "Kendrick Lamar",
+  image: humble_pic})
 
 
 
@@ -568,7 +494,8 @@ I like the way you be freezin'
 Pick up the phone (Pick up the phone)
 I'm in the zone, pick up the phone, baby
 I'm in the zone",
-  artist: "Young Thug"})
+  artist: "Young Thug",
+  image: putp_pic})
 
 
 
@@ -691,7 +618,8 @@ The devil is a lie, bitch I'm the truth
 The devil is a lie, bitch I'm the proof
 The devil is a lie, the devil is a lie
 Bitch I'm alive, the devil is a lie",
-  artist: "Rick Ross"})
+  artist: "Rick Ross",
+  image: tdial_pic})
 
 
 
@@ -785,7 +713,8 @@ You gotta get that dirt off your shoulder
 [Outro]
 You're now tuned into the mu'fuckin' greatest
 Best rapper alive, best rapper alive",
-  artist: "Jay Z"})
+  artist: "Jay Z",
+  image: doys_pic})
 
 
 
@@ -849,4 +778,92 @@ What do you know? (Flashing lights)
 What do you know? (Flashing lights)
 (Flashing lights, flashing lights)
 (Flashing lights, lights, lights, lights…)",
-  artist: "Kanye West"})
+  artist: "Kanye West",
+  image: fl_pic})
+
+
+jaf = Track.create({
+  author_id: will.id,
+  title: "Just A Friend",
+  body: "[Verse 1]
+Have you ever met a girl that you tried to date
+But a year to make love she wanted you to wait
+Let me tell ya a story of my situation
+I was talkin' to this girl from the U.S. nation
+The way that I met her was on tour at a concert
+She had long hair and a short miniskirt
+I just got onstage drippin', pourin' with sweat
+I was walkin' through the crowd and gues who I met
+I whispered in her ear, come to the picture booth
+So I can ask you some questions to see if you are a hundred proof
+I asked her her name, she said blah-blah-blah
+She had 9/10 pants and a very big bra
+I took a couple of flicks and she was enthused
+I said, how do you like the show?
+She said, \"I was very amused\"
+I started throwin' bass, she started throwin' back mid-range
+But when I sprung the question, she acted kind of strange
+Then when I asked, do ya have a man, she tried to pretend
+She said, \"no I don\'t, I only have a friend\"
+Come on, I\'m not even goin' for it
+This is what I\'m goin\' sing
+
+[Chorus]
+You, you got what I need but you say he's just a friend
+And you say he's just a friend, oh baby
+You, you got what I need but you say he's just a friend
+But you say he's just a friend, oh baby
+You, you got what I need but you say he's just a friend
+But you say he's just a friend
+
+[Verse 2]
+So I took blah-blah's word for it at this time
+I thought just havin' a friend couldn't be no crime
+'Cause I have friends and that's a fact
+Like Agnes, Agatha, Germaine, and Jacq
+Forget about that, let's go into the story
+About a girl named blah-blah-blah that adored me
+So we started talkin', getttin' familiar
+Spendin' a lot of time so we can build up
+A relationship or some understanding
+How it's gonna be in the future we was plannin'
+Everything sounded so dandy and sweet
+I had no idea I was in for a treat
+After this was established, everything was cool
+The tour was over and she went back to school
+I called every day to see how she was doin'
+Every time that I called her it seemed somethin' was brewin'
+I called her on my dime, picked up, and then I called again
+I said, yo, who was that? Oh, he's just a friend
+Don't gimme that, don't ever gimme that
+Jus' bust this
+
+[Chorus]
+You, you got what I need but you say he's just a friend
+And you say he's just a friend, oh baby
+You, you got what I need but you say he's just a friend
+But you say he's just a friend, oh baby
+You, you got what I need but you say he's just a friend
+But you say he's just a friend
+
+[Verse 3]
+So I came to her college on a surprise visit
+To see my girl that was so exquisite
+It was a school day, I knew she was there
+The first semester of the school year
+I went to a gate to ask where was her dorm
+This guy made me fill out a visitor's form
+He told me where it was and I as on my way
+To see my baby doll, I was happy to say
+I arrived in front of the dormitory
+Yo, could you tell me where is door three?
+They showed me where it was for the moment
+I didn't know I was in for such an event
+So I came to her room and opened the door
+Oh, snap! Guess what I saw?
+A fella tongue-kissin' my girl in the mouth,
+I was so in shock my heart went down south
+So please listen to the message that I say
+Don't ever talk to a girl who says she just has a friend",
+  artist: "Biz Markie",
+  image: jaf_pic})
