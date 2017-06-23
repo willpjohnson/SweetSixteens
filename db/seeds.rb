@@ -93,8 +93,7 @@ A fella tongue-kissin' my girl in the mouth,
 I was so in shock my heart went down south
 So please listen to the message that I say
 Don't ever talk to a girl who says she just has a friend",
-  artist: "Biz Markie",
-  image_url: "https://images.genius.com/0966fd512329a4ba531fe7355e8470f4.500x493x1.jpg"})
+  artist: "Biz Markie"})
 
 
 
@@ -246,8 +245,7 @@ You best protect ya neck
 You best protect ya neck
 You best protect ya neck
 You best protect ya neck",
-  artist: "Wu Tang Clan",
-  image_url: "https://images.genius.com/9dacbb90886f0167438a7c114e5b933a.790x768x1.jpg"})
+  artist: "Wu Tang Clan"})
 
 
 
@@ -355,8 +353,7 @@ G-yeah, the whole Bridge
 Queens get the money
 41st side, keepin' it real, you know
 Queens get the money",
-  artist: "Mobb Deep",
-  image_url: "https://images.genius.com/570d6785f6cc8605a7f8649b91769635.600x595x1.jpg"})
+  artist: "Mobb Deep"})
 
 
 
@@ -439,8 +436,7 @@ Be humble (hol' up, hol' up)
 Bitch, sit down (hol' up, hol' up, lil' bitch)
 Be humble (lil' bitch, hol' up, bitch)
 Sit down (hol' up, hol' up, hol' up, hol' up)",
-  artist: "Kendrick Lamar",
-  image_url: "https://images.genius.com/4387b0bcc88e07676997ba73793cc73c.1000x1000x1.jpg"})
+  artist: "Kendrick Lamar"})
 
 
 
@@ -572,8 +568,7 @@ I like the way you be freezin'
 Pick up the phone (Pick up the phone)
 I'm in the zone, pick up the phone, baby
 I'm in the zone",
-  artist: "Young Thug",
-  image_url: "https://upload.wikimedia.org/wikipedia/en/thumb/3/3f/PickUpThePhoneYoungThug.jpg/220px-PickUpThePhoneYoungThug.jpg"})
+  artist: "Young Thug"})
 
 
 
@@ -696,8 +691,7 @@ The devil is a lie, bitch I'm the truth
 The devil is a lie, bitch I'm the proof
 The devil is a lie, the devil is a lie
 Bitch I'm alive, the devil is a lie",
-  artist: "Rick Ross",
-  image_url: "http://hiphop-n-more.com/wp-content/uploads/2013/12/rick-ross-devil-is-a-lie.jpg"})
+  artist: "Rick Ross"})
 
 
 
@@ -791,8 +785,7 @@ You gotta get that dirt off your shoulder
 [Outro]
 You're now tuned into the mu'fuckin' greatest
 Best rapper alive, best rapper alive",
-  artist: "Jay Z",
-  image_url: "https://images-na.ssl-images-amazon.com/images/I/5166AAZKFCL._SY300_.jpg"})
+  artist: "Jay Z"})
 
 
 
@@ -856,5 +849,4 @@ What do you know? (Flashing lights)
 What do you know? (Flashing lights)
 (Flashing lights, flashing lights)
 (Flashing lights, lights, lights, lights…)",
-  artist: "Kanye West",
-  image_url: "https://images-na.ssl-images-amazon.com/images/I/51gE5fyNEDL.jpg"})
+  artist: "Kanye West"})

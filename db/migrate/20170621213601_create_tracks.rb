@@ -5,7 +5,6 @@ class CreateTracks < ActiveRecord::Migration[5.0]
       t.string :title, null: false
       t.text :body, null: false
       t.string :artist, null: false
-      t.string :image_url, null: false
 
       t.timestamps
     end
