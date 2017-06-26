@@ -19,8 +19,9 @@
   },
   annotations: {
     1: {
-      body: "Annotation Text"
+      track_id: 1,
       author_id: 1,
+      body: "Annotation Text"
       lyrics: "Selection of lyrics being annotated"
     }
   }

@@ -7,7 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 User.destroy_all
 will = User.create({username: 'willpjohnson', password: 'fullstack', avatar: File.open('app/assets/images/admin.jpg')})
-guest = User.create({username: 'Guest', password: 'password'});
+guest = User.create({username: 'Guest', password: 'password'})
 
 pyn_pic = File.open('app/assets/images/pyn_pic.jpg')
 so_pic = File.open('app/assets/images/so_pic.jpg')
@@ -867,3 +867,22 @@ So please listen to the message that I say
 Don't ever talk to a girl who says she just has a friend",
   artist: "Biz Markie",
   image: jaf_pic})
+
+Annotation.destroy_all
+pyn1 = Annotation.create({
+  track_id: pyn.id, author_id: will.id,
+  body: "Protect Ya Neck opens with a sampled phone-in to a radio station.",
+  start_idx: 8, end_idx: 374
+  })
+
+pyn2 = Annotation.create({
+  track_id: pyn.id, author_id: will.id,
+  body: "Raekwon's verses are as tough as bodybuilder Arnold Schwarzenegger.",
+  start_idx: 1050, end_idx: 1122
+  })
+
+so1 = Annotation.create({
+  track_id: pyn.id, author_id: will.id,
+  body: "Raekwon's verses are as tough as bodybuilder Arnold Schwarzenegger.",
+  start_idx: 1050, end_idx: 1122
+  })

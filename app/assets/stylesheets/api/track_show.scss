@@ -77,6 +77,8 @@
   background-color: white;
   width: 64%;
   margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
 }
 
 //  // LYRICS
@@ -87,4 +89,34 @@
   white-space: pre-wrap;
 
   line-height: 150%;
+}
+
+.anno-lyric-span {
+  background-color: #e6e6f2;
+  cursor: pointer;
+}
+
+.anno-lyric-span:hover {
+  background-color: #fffc68;
+}
+
+//  // ANNOTATIONS
+
+.track-show-annotations-div {
+  padding: 12px;
+  margin-top: 10px;
+  width: 40%;
+  white-space: pre-wrap;
+}
+
+.track-show-annotations-div h2 {
+  font-size: 14px;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.annotation-box {
+  border-left: 4px solid black;
+  padding-left: 15px;
+  position: absolute;
 }

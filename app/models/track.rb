@@ -20,4 +20,10 @@ class Track < ApplicationRecord
 
   has_attached_file :image, default_url: "default-track-image.png"
   validates_attachment_content_type :image, content_type: /\Aimage\/.*\Z/
+
+  has_many :annotations,
+    class_name: :Annotation,
+    primary_key: :id,
+    foreign_key: :track_id
+    
 end

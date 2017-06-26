@@ -1,5 +1,7 @@
 import React from 'react';
 import { Link, Route, NavLink } from 'react-router-dom';
+import AnnotationContainer from '../annotation/annotation_container';
+import Lyrics from './lyrics';
 
 class TrackShow extends React.Component {
   constructor(props) {
@@ -8,11 +10,13 @@ class TrackShow extends React.Component {
 
   componentDidMount() {
     this.props.fetchTrack(this.props.trackId);
+    this.props.fetchAnnotations(this.props.trackId);
   }
 
   componentWillReceiveProps(nextProps) {
     if (nextProps.trackId !== this.props.trackId) {
       this.props.fetchTrack(nextProps.trackId);
+      this.props.fetchAnnotations(nextProps.trackId);
     }
   }
 
@@ -38,7 +42,13 @@ class TrackShow extends React.Component {
 
           <div className="track-show-lyrics-and-annotations-div">
             <div className="track-show-lyrics-div">
-              <p>{track.body}</p>
+              <Lyrics trackId={track.id} anno={this.props.anno}
+                lyrics={track.body} fetchAnnotation={this.props.fetchAnnotation}
+              />
+            </div>
+
+            <div className="track-show-annotations-div">
+              <AnnotationContainer trackId={track.id}/>
             </div>
           </div>
         </div>
