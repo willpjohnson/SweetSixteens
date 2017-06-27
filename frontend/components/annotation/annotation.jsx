@@ -8,19 +8,14 @@ class Annotation extends React.Component {
 
   render() {
     const anno = this.props.currentAnno;
-    let top;
+
     if (this.props.currentAnnoHeight) {
-      top = this.props.currentAnnoHeight;
-    } else {
-      top = 'auto';
-    }
-    
-    if (this.props.currentAnnoHeight) {
+      let top = this.props.currentAnnoHeight;
       return(
-        <section className="annotation-box" style={{top: top}}>
+        <div className="annotation-box" style={{top: top}}>
           <h2>SweetSixteens Annotation</h2>
-          <p>{anno.body}</p>
-        </section>
+           {anno.body}
+        </div>
       );
     } else {
       return(<div></div>);

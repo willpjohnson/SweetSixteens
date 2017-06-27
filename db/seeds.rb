@@ -882,7 +882,85 @@ pyn2 = Annotation.create({
   })
 
 so1 = Annotation.create({
-  track_id: pyn.id, author_id: will.id,
-  body: "Raekwon's verses are as tough as bodybuilder Arnold Schwarzenegger.",
-  start_idx: 1050, end_idx: 1122
+  track_id: so.id, author_id: will.id,
+  body: "Prodigy is from Queensbridge in Queens, NY.",
+  start_idx: 213, end_idx: 261
+  })
+
+so2 = Annotation.create({
+  track_id: so.id, author_id: will.id,
+  body: "Havoc raps about lots of criminal activity and could be implicated for his lyrics.",
+  start_idx: 2186, end_idx: 2225
+  })
+
+humble1 = Annotation.create({
+  track_id: humble.id, author_id: will.id,
+  body: "Kendrick makes a lot of money.",
+  start_idx: 329, end_idx: 378
+  })
+
+humble2 = Annotation.create({
+  track_id: humble.id, author_id: will.id,
+  body: "More flexing about how great he is. Even without the BMW, he has a Mercedes. Even if he quits, he's the greates of all time.",
+  start_idx: 644, end_idx: 743
+  })
+
+putp1 = Annotation.create({
+  track_id: putp.id, author_id: will.id,
+  body: "Travis wants her to answer his phone call.",
+  start_idx: 818, end_idx: 892
+  })
+
+putp2 = Annotation.create({
+  track_id: putp.id, author_id: will.id,
+  body: "Macaulay Culkin famously starred in the Home Alone movies in the 1990s.",
+  start_idx: 2308, end_idx: 2359
+  })
+
+tdial1 = Annotation.create({
+  track_id: tdial.id, author_id: will.id,
+  body: "Rick Ross' album is called 'Masterminds'",
+  start_idx: 19, end_idx: 31
+  })
+
+tdial2 = Annotation.create({
+  track_id: tdial.id, author_id: will.id,
+  body: "Jay doesn't wear True Religion jeans, so he says he's an atheist.",
+  start_idx: 2334, end_idx: 2382
+  })
+
+doys1 = Annotation.create({
+  track_id: doys.id, author_id: will.id,
+  body: "Self-explanatory.",
+  start_idx: 8, end_idx: 53
+  })
+
+doys2 = Annotation.create({
+  track_id: doys.id, author_id: will.id,
+  body: "Even Obama has been seen brushing his shoulders off.",
+  start_idx: 1083, end_idx: 1148
+  })
+
+fl1 = Annotation.create({
+  track_id: fl.id, author_id: will.id,
+  body: "Ye paints a picture of a relaxing vacation scene.",
+  start_idx: 305, end_idx: 463
+  })
+
+fl2 = Annotation.create({
+  track_id: fl.id, author_id: will.id,
+  body: "FEMA (Federal Emergency Management Agency) was responsible for cleaning up the disaster of Hurricane Katrina.",
+  start_idx: 1183, end_idx: 1216
+  })
+
+jaf1 = Annotation.create({
+  track_id: jaf.id, author_id: will.id,
+  body: "Biz kicks things off with a question to the listener.",
+  start_idx: 10, end_idx: 104
+  })
+
+jaf2 = Annotation.create({
+  track_id: jaf.id, author_id: will.id,
+  body: "Biz wants to date this girl, but she is with another man who she says is 'just a friend'.",
+  start_idx: 985, end_idx: 1080
   })

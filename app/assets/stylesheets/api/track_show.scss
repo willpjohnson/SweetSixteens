@@ -106,7 +106,6 @@
   padding: 12px;
   margin-top: 10px;
   width: 40%;
-  white-space: pre-wrap;
 }
 
 .track-show-annotations-div h2 {
@@ -119,4 +118,23 @@
   border-left: 4px solid black;
   padding-left: 15px;
   position: absolute;
+  width: 23%;
+  white-space: pre-wrap;
+}
+
+.annotation-form-div {
+  padding: 12px;
+  margin-top: 10px;
+  width: 80%;
+
+  border: 1px solid black;
+}
+
+.annotation-form-input {
+  width: 100%;
+  height: 150px;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: bold;
+  font-size: 14px;
+  background-color: #bfbfbf;
 }

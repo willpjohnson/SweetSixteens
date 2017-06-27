@@ -6,6 +6,17 @@ import Lyrics from './lyrics';
 class TrackShow extends React.Component {
   constructor(props) {
     super(props);
+
+    this.state = {
+      selectionStartIdx: null,
+      selectionEndIdx: null,
+      formClass: "annotation-form-div hidden"
+    };
+
+    window.trackstate = this.state;
+
+    this.updateSelection = this.updateSelection.bind(this);
+    this.exitForm = this.exitForm.bind(this);
   }
 
   componentDidMount() {
@@ -18,6 +29,15 @@ class TrackShow extends React.Component {
       this.props.fetchTrack(nextProps.trackId);
       this.props.fetchAnnotations(nextProps.trackId);
     }
+  }
+
+  updateSelection(start, end) {
+    this.setState({selectionStartIdx: start, selectionEndIdx: end, formClass: "annotation-form-div"});
+  }
+
+  exitForm(e) {
+    e.preventDefault();
+    this.setState({formClass: "annotation-form-div hidden"});
   }
 
   render() {
@@ -43,13 +63,22 @@ class TrackShow extends React.Component {
           <div className="track-show-lyrics-and-annotations-div">
             <div className="track-show-lyrics-div">
               <Lyrics trackId={track.id} anno={this.props.anno}
-                lyrics={track.body} fetchAnnotation={this.props.fetchAnnotation}
+                lyrics={track.body} updateSelection={this.updateSelection}
+                fetchAnnotation={this.props.fetchAnnotation}
               />
             </div>
 
             <div className="track-show-annotations-div">
               <AnnotationContainer trackId={track.id}/>
+              <div className={this.state.formClass}>
+                <form onSubmit={this.handleSubmit} className="annotation-form">
+                  <textarea className="annotation-form-input" placeholder="Write your own annotation..."/>
+                  <button>Save</button>
+                </form>
+                <button onClick={this.exitForm}>Exit</button>
+              </div>
             </div>
+
           </div>
         </div>
       );
