@@ -91,3 +91,29 @@
   margin-left: 22px;
   margin-bottom: 100px;
 }
+
+.ntf-submit {
+  background-color: black;
+  color: white;
+  font-size: 14px;
+  font-family: 'Open Sans', sans-serif;
+  border: 3px solid white;
+  cursor: pointer;
+}
+
+.ntf-file-select {
+  width: 0.1px;
+	height: 0.1px;
+	opacity: 0;
+	overflow: hidden;
+	position: absolute;
+	z-index: -1;
+}
+
+.ntf-file-select-label {
+  cursor: pointer;
+}
+
+.ntf-file-select-label * {
+  color: white;
+}

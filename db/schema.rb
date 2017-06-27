@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170626152307) do
+ActiveRecord::Schema.define(version: 20170627202730) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -26,6 +26,17 @@ ActiveRecord::Schema.define(version: 20170626152307) do
     t.integer  "end_idx"
     t.index ["author_id"], name: "index_annotations_on_author_id", using: :btree
     t.index ["track_id"], name: "index_annotations_on_track_id", using: :btree
+  end
+
+  create_table "comments", force: :cascade do |t|
+    t.integer  "author_id",                 null: false
+    t.integer  "annotation_id",             null: false
+    t.text     "body",                      null: false
+    t.integer  "score",         default: 0, null: false
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
+    t.index ["annotation_id"], name: "index_comments_on_annotation_id", using: :btree
+    t.index ["author_id"], name: "index_comments_on_author_id", using: :btree
   end
 
   create_table "tracks", force: :cascade do |t|

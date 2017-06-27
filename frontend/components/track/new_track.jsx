@@ -115,7 +115,8 @@ class NewTrackForm extends React.Component {
 
             <div className="ntf-additional-div">
               <div className="ntf-label-div"><label>IMAGE<br />
-                  <input type="file" onChange={this.updateFile}/>
+                  <input id="file" type="file" className="ntf-file-select" onChange={this.updateFile}/>
+                  <label className="ntf-file-select-label"htmlFor="file"><h2>Choose Image</h2></label>
                 </label>
                 <img className="ntf-image-preview" src={this.state.imageUrl} />
               </div>

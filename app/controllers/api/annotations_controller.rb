@@ -12,7 +12,8 @@ class Api::AnnotationsController < ApplicationController
   def create
     @annotation = Annotation.new(annotation_params)
     if @annotation.save
-      render :show
+      @track = @annotation.track
+      render 'api/tracks/show'
     else
       render json: @annotation.errors.full_messages, status: 422
     end

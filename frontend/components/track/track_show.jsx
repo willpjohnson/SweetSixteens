@@ -10,12 +10,13 @@ class TrackShow extends React.Component {
     this.state = {
       selectionStartIdx: null,
       selectionEndIdx: null,
-      formClass: "annotation-form-div hidden",
+      displayForm: false,
       annoInput: ""
     };
 
-    window.trackstate = this.state;
+    this.deleteError = "";
 
+    this.handleDelete = this.handleDelete.bind(this);
     this.updateSelection = this.updateSelection.bind(this);
     this.exitForm = this.exitForm.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -23,18 +24,24 @@ class TrackShow extends React.Component {
 
   componentDidMount() {
     this.props.fetchTrack(this.props.trackId);
-    this.props.fetchAnnotations(this.props.trackId);
+    // this.props.fetchAnnotations(this.props.trackId);
   }
 
   componentWillReceiveProps(nextProps) {
     if (nextProps.trackId !== this.props.trackId) {
       this.props.fetchTrack(nextProps.trackId);
-      this.props.fetchAnnotations(nextProps.trackId);
+      // this.props.fetchAnnotations(nextProps.trackId);
     }
   }
 
+  handleDelete(e) {
+    e.preventDefault();
+    this.props.deleteTrack(this.props.trackId);
+    this.props.history.push('/');
+  }
+
   updateSelection(start, end) {
-    this.setState({selectionStartIdx: start, selectionEndIdx: end, formClass: "annotation-form-div"});
+    this.setState({selectionStartIdx: start, selectionEndIdx: end, displayForm: true});
   }
 
   update() {
@@ -55,16 +62,42 @@ class TrackShow extends React.Component {
     this.props.createAnnotation(annotation);
     this.setState({annoInput: ""});
     this.exitForm();
-    this.props.fetchAnnotations(this.props.trackId);
   }
 
   exitForm() {
-    this.setState({formClass: "annotation-form-div hidden"});
+    this.setState({displayForm: false});
+  }
+
+  annotationArea() {
+    let annotationArea;
+    if (this.state.displayForm) {
+      annotationArea = (
+        <div className="annotation-form-div">
+          <form onSubmit={this.handleSubmit} className="annotation-form">
+            <textarea value={this.state.annoInput} onChange={this.update()} className="annotation-form-input" placeholder="Write your own annotation..."/>
+            <button>Save</button>
+          </form>
+          <button onClick={this.exitForm}>Exit</button>
+        </div>
+      );
+    } else {
+      annotationArea = (
+        <AnnotationContainer trackId={this.props.track.id}/>
+      );
+    }
+    return annotationArea;
   }
 
   render() {
     const track = this.props.track;
-    if (track.id === this.props.trackId) {
+    let deleteButton;
+    if(this.props.track && this.props.currentUser && this.props.currentUser.id === this.props.track.author_id) {
+      deleteButton = <button className="track-show-info-delete"onClick={this.handleDelete}>DELETE</button>;
+    } else {
+      deleteButton = <div></div>;
+    }
+
+    if (track) {
       return(
         <div className="track-show-div">
           <div className="track-show-banner">
@@ -78,6 +111,7 @@ class TrackShow extends React.Component {
               <div className="track-show-info-metadata">
                 <h1>{track.title}</h1>
                 <h2>{track.artist}</h2>
+                {deleteButton}
               </div>
             </div>
           </div>
@@ -86,19 +120,12 @@ class TrackShow extends React.Component {
             <div className="track-show-lyrics-div">
               <Lyrics trackId={track.id} anno={this.props.anno}
                 lyrics={track.body} updateSelection={this.updateSelection}
-                fetchAnnotation={this.props.fetchAnnotation}
+                fetchAnnotation={this.props.fetchAnnotation} receiveAnnotation={this.props.receiveAnnotation}
               />
             </div>
 
             <div className="track-show-annotations-div">
-              <AnnotationContainer trackId={track.id}/>
-              <div className={this.state.formClass}>
-                <form onSubmit={this.handleSubmit} className="annotation-form">
-                  <textarea value={this.state.annoInput} onChange={this.update()} className="annotation-form-input" placeholder="Write your own annotation..."/>
-                  <button>Save</button>
-                </form>
-                <button onClick={this.exitForm}>Exit</button>
-              </div>
+              {this.annotationArea()}
             </div>
 
           </div>

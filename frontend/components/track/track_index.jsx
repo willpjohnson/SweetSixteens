@@ -42,7 +42,7 @@ class TrackIndex extends React.Component {
         </li>
       );
     });
-    
+
     if (this.props.tracks) {
       return(
         <div className="track-index-div">

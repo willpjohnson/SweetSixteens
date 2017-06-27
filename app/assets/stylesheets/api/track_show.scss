@@ -71,6 +71,16 @@
   text-shadow: 1px 0 0 #000, 0 -1px 0 #000, 0 1px 0 #000, -1px 0 0 #000;
 }
 
+.track-show-info-delete {
+  background-color: black;
+  border: 2px solid white;
+  color: white;
+
+  margin: 20px;
+  margin-top: 50px;
+  cursor: pointer;
+}
+
 // LYRICS AND ANNOTATIONS
 
 .track-show-lyrics-and-annotations-div {

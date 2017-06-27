@@ -4,7 +4,10 @@ import { fetchTracks } from '../../actions/track_actions';
 import { values } from 'lodash';
 
 const mapStateToProps = (state) => {
-  const tracks = state.track.entities;
+  const unsortedTracks = values(state.track.entities);
+  const tracks = unsortedTracks.sort((a, b) => {
+    return new Date(b.updated_at) - new Date(a.updated_at);
+  });
   return({
     tracks
   });

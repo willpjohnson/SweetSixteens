@@ -4,7 +4,8 @@ import { fetchAnnotation } from '../../actions/annotation_actions';
 
 const mapStateToProps = (state) => {
   return({
-    currentAnno: state.annotation.currentAnno,
+    currentUser: state.session.currentUser,
+    currentAnno: state.annotation.allAnno[state.annotation.currentAnno],
     currentAnnoHeight: state.annotation.currentAnnoHeight,
     allAnno: state.annotation.allAnno,
   });

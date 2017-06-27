@@ -1,5 +1,7 @@
 import * as APIUtil from '../util/annotation_api_util';
 
+import { receiveTrack } from './track_actions';
+
 export const RECEIVE_ANNOTATION = 'RECEIVE_ANNOTATION';
 export const RECEIVE_ANNOTATIONS = 'RECEIVE_ANNOTATIONS';
 
@@ -18,8 +20,8 @@ export const fetchAnnotations = (trackId) => dispatch => {
 };
 
 export const createAnnotation = (annotation) => dispatch => {
-  return APIUtil.createAnnotation(annotation).then( (annotation) => {
-    dispatch(receiveAnnotation(annotation));
+  return APIUtil.createAnnotation(annotation).then( ({track, annotations}) => {
+    dispatch(receiveTrack(track, annotations));
   });
 };
 

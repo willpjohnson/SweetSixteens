@@ -15,7 +15,8 @@ class Lyrics extends React.Component {
     e.preventDefault();
     const height = e.currentTarget.offsetTop;
     const annoId = parseInt(e.currentTarget.id);
-    this.props.fetchAnnotation([annoId, height]);
+    // this.props.fetchAnnotation([annoId, height]);
+    this.props.receiveAnnotation(annoId, height);
   }
 
   handleSelection(e) {
