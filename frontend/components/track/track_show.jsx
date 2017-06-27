@@ -10,13 +10,15 @@ class TrackShow extends React.Component {
     this.state = {
       selectionStartIdx: null,
       selectionEndIdx: null,
-      formClass: "annotation-form-div hidden"
+      formClass: "annotation-form-div hidden",
+      annoInput: ""
     };
 
     window.trackstate = this.state;
 
     this.updateSelection = this.updateSelection.bind(this);
     this.exitForm = this.exitForm.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   componentDidMount() {
@@ -35,8 +37,28 @@ class TrackShow extends React.Component {
     this.setState({selectionStartIdx: start, selectionEndIdx: end, formClass: "annotation-form-div"});
   }
 
-  exitForm(e) {
+  update() {
+    return e => {
+      this.setState({annoInput: e.currentTarget.value});
+    };
+  }
+
+  handleSubmit(e) {
     e.preventDefault();
+    const annotation = {
+      track_id: this.props.trackId,
+      author_id: this.props.currentUser.id,
+      body: this.state.annoInput,
+      start_idx: this.state.selectionStartIdx,
+      end_idx: this.state.selectionEndIdx
+    };
+    this.props.createAnnotation(annotation);
+    this.setState({annoInput: ""});
+    this.exitForm();
+    this.props.fetchAnnotations(this.props.trackId);
+  }
+
+  exitForm() {
     this.setState({formClass: "annotation-form-div hidden"});
   }
 
@@ -72,7 +94,7 @@ class TrackShow extends React.Component {
               <AnnotationContainer trackId={track.id}/>
               <div className={this.state.formClass}>
                 <form onSubmit={this.handleSubmit} className="annotation-form">
-                  <textarea className="annotation-form-input" placeholder="Write your own annotation..."/>
+                  <textarea value={this.state.annoInput} onChange={this.update()} className="annotation-form-input" placeholder="Write your own annotation..."/>
                   <button>Save</button>
                 </form>
                 <button onClick={this.exitForm}>Exit</button>

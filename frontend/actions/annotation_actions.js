@@ -17,6 +17,12 @@ export const fetchAnnotations = (trackId) => dispatch => {
   });
 };
 
+export const createAnnotation = (annotation) => dispatch => {
+  return APIUtil.createAnnotation(annotation).then( (annotation) => {
+    dispatch(receiveAnnotation(annotation));
+  });
+};
+
 export const receiveAnnotation = (annotation, height) => {
   return({
     type: RECEIVE_ANNOTATION,

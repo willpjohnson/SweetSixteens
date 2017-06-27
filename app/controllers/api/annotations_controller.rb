@@ -9,6 +9,15 @@ class Api::AnnotationsController < ApplicationController
     render :show
   end
 
+  def create
+    @annotation = Annotation.new(annotation_params)
+    if @annotation.save
+      render :show
+    else
+      render json: @annotation.errors.full_messages, status: 422
+    end
+  end
+
   private
   def annotation_params
     params.require(:annotation).permit(:track_id, :author_id, :body, :score, :start_idx, :end_idx)
