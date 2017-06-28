@@ -5,7 +5,10 @@ Rails.application.routes.draw do
     resources :tracks do
       resources :annotations, only: [:index]
     end
-    resources :annotations, except: [:index]
+    resources :annotations, except: [:index] do
+      resources :comments, only: [:index]
+    end
+    resources :comments, except: [:index]
   end
 
   root "static_pages#root"

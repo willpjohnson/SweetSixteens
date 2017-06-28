@@ -1,0 +1,123 @@
+// Place all the styles related to the Api::Comments controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.annotation-comment-div {
+  margin-top: 8px;
+  padding-top: 2px;
+  padding-bottom: 2px;
+  background-color: #e6e6f2;
+}
+
+.annotation-comment-input {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: bold;
+  font-size: 14px;
+  height: 20px;
+  margin: 10px;
+  padding: 2px;
+
+  width: 92%;
+  max-width: 92%;
+}
+
+.annotation-comment-input-submit {
+  background-color: #e6e6f2;
+  border: 2px solid black;
+  color: black;
+  cursor: pointer;
+  margin: 10px;
+  margin-top: 0px;
+}
+
+.comment-not-logged-in {
+  background-color: #e6e6f2;
+  border: 2px solid black;
+  cursor: pointer;
+
+  margin: 10px;
+  padding: 2px;
+  width: auto;
+  display: inline-block;
+  text-decoration: none;
+}
+
+.comment-not-logged-in-html {
+  color: black;
+  text-decoration: none;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: bold;
+  font-size: 11px;
+}
+
+.log-in-to-leave-a-comment {
+  padding: 2px;
+}
+
+.comment-list {
+  padding-bottom: 2px;
+}
+
+.comment-list-item {
+  display: block;
+  width: 90%;
+  margin: 0 auto;
+  padding: 5px;
+  border-top: 1px solid #bfbfbf;
+}
+
+.comment-posted-circumstances {
+  display: flex;
+  justify-content: space-between;
+}
+
+.comment-posted-circumstances h2 {
+  font-size: 4px;
+  margin-top: 8px;
+  color: #bfbfbf;
+}
+
+.comment-author-div {
+  display: table;
+}
+
+.comment-author-div img {
+  display: table-cell;
+  vertical-align: middle;
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+
+  padding: 5px;
+  padding-left: 0;
+}
+
+.comment-author-div h1 {
+  display: table-cell;
+  vertical-align: middle;
+  color: black;
+  text-decoration: none;
+
+  padding: 5px;
+}
+
+.comment-posted-extra-info {
+  display: flex;
+}
+
+.comment-icons {
+  display: flex;
+  margin-top: 4px;
+}
+
+.comment-icons * {
+  padding-right: 3px;
+}
+
+.comment-icons-delete {
+  background-color: #e6e6f2;
+  border: none;
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}

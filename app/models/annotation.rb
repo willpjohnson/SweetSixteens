@@ -21,4 +21,6 @@ class Annotation < ApplicationRecord
     primary_key: :id,
     foreign_key: :track_id
 
+  has_many :comments
+
 end
