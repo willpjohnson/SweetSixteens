@@ -1,11 +1,17 @@
-export const fetchComments = (commentableData) => {
-  const commentableId = commentableData[0];
-  const commentableType = commentableData[1];
-  debugger
+export const fetchAnnotationComments = (commentableId) => {
   return(
     $.ajax({
       method: 'GET',
-      url: `api/${commentableType.toLowerCase()}s/${commentableId}/comments`
+      url: `api/annotations/${commentableId}/comments`
+    })
+  );
+};
+
+export const fetchTrackComments = (commentableId) => {
+  return(
+    $.ajax({
+      method: 'GET',
+      url: `api/tracks/${commentableId}/comments`
     })
   );
 };

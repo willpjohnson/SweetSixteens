@@ -14,12 +14,12 @@ class Comment extends React.Component {
   }
 
   componentDidMount() {
-    this.props.fetchComments([this.props.commentableId, this.props.commentableType]);
+    this.props.fetchComments(this.props.commentableId);
   }
 
   componentWillReceiveProps(nextProps) {
-    if (nextProps.commentableType === "Annotation" && this.props.commentableId !== nextProps.commentableId) {
-      this.props.fetchComments([nextProps.commentableId, nextProps.commentableType]);
+    if (this.props.commentableId !== nextProps.commentableId) {
+      this.props.fetchComments(nextProps.commentableId);
     }
   }
 
@@ -38,7 +38,7 @@ class Comment extends React.Component {
   handleDeleteComment(e) {
     e.preventDefault();
     const commentId = parseInt(e.currentTarget.id);
-    this.props.deleteComment(commentId);
+    this.props.deleteComment(commentId, this.props.commentableType);
   }
 
   update() {
@@ -73,7 +73,6 @@ class Comment extends React.Component {
   }
 
   render() {
-
     const commentLis = this.props.comments.map( (comment, index) => {
       let deleteIcon;
       if(this.props.currentUser && comment.author_id === this.props.currentUser.id) {
