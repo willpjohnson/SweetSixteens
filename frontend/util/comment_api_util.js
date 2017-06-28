@@ -1,8 +1,11 @@
-export const fetchComments = (annotationId) => {
+export const fetchComments = (commentableData) => {
+  const commentableId = commentableData[0];
+  const commentableType = commentableData[1];
+  debugger
   return(
     $.ajax({
       method: 'GET',
-      url: `api/annotations/${annotationId}/comments`
+      url: `api/${commentableType.toLowerCase()}s/${commentableId}/comments`
     })
   );
 };

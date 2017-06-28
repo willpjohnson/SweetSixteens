@@ -14,12 +14,12 @@ class Comment extends React.Component {
   }
 
   componentDidMount() {
-    this.props.fetchComments(this.props.annotationId);
+    this.props.fetchComments([this.props.commentableId, this.props.commentableType]);
   }
 
   componentWillReceiveProps(nextProps) {
-    if (this.props.annotationId !== nextProps.annotationId) {
-      this.props.fetchComments(nextProps.annotationId);
+    if (nextProps.commentableType === "Annotation" && this.props.commentableId !== nextProps.commentableId) {
+      this.props.fetchComments([nextProps.commentableId, nextProps.commentableType]);
     }
   }
 
@@ -27,7 +27,8 @@ class Comment extends React.Component {
     e.preventDefault();
     let comment = {
       author_id: this.props.currentUser.id,
-      annotation_id: this.props.annotationId,
+      commentable_id: this.props.commentableId,
+      commentable_type: this.props.commentableType,
       body: this.state.body
     };
     this.props.createComment(comment);

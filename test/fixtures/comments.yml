@@ -2,13 +2,14 @@
 #
 # Table name: comments
 #
-#  id            :integer          not null, primary key
-#  author_id     :integer          not null
-#  annotation_id :integer          not null
-#  body          :text             not null
-#  score         :integer          default(0), not null
-#  created_at    :datetime         not null
-#  updated_at    :datetime         not null
+#  id               :integer          not null, primary key
+#  body             :text             not null
+#  score            :integer          default(0), not null
+#  created_at       :datetime         not null
+#  updated_at       :datetime         not null
+#  commentable_id   :integer
+#  commentable_type :string
+#  author_id        :integer          not null
 #
 
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html

@@ -25,5 +25,7 @@ class Track < ApplicationRecord
     class_name: :Annotation,
     primary_key: :id,
     foreign_key: :track_id
-    
+
+  has_many :comments, as: :commentable
+
 end

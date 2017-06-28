@@ -4,6 +4,7 @@ Rails.application.routes.draw do
     resource :session, only: [:create, :new, :destroy]
     resources :tracks do
       resources :annotations, only: [:index]
+      resources :comments, only: [:index]
     end
     resources :annotations, except: [:index] do
       resources :comments, only: [:index]

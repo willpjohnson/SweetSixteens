@@ -2,6 +2,7 @@ import React from 'react';
 import { Link, Route, NavLink } from 'react-router-dom';
 import AnnotationContainer from '../annotation/annotation_container';
 import Lyrics from './lyrics';
+import CommentContainer from '../comment/comment_container';
 
 class TrackShow extends React.Component {
   constructor(props) {
@@ -101,7 +102,7 @@ class TrackShow extends React.Component {
       return(
         <div className="track-show-div">
           <div className="track-show-banner">
-            <div className="track-show-background-cover" />
+            <div className="track-show-background-cover"></div>
             <div className="track-show-blur-overflow">
               <img className="track-show-background" src={track.image_url}></img>
             </div>
@@ -116,12 +117,14 @@ class TrackShow extends React.Component {
             </div>
           </div>
 
+
           <div className="track-show-lyrics-and-annotations-div">
             <div className="track-show-lyrics-div">
               <Lyrics trackId={track.id} anno={this.props.anno}
                 lyrics={track.body} updateSelection={this.updateSelection}
                 fetchAnnotation={this.props.fetchAnnotation} receiveAnnotation={this.props.receiveAnnotation}
               />
+              <CommentContainer commentableId={track.id} commentableType="Track"/>
             </div>
 
             <div className="track-show-annotations-div">
@@ -129,6 +132,7 @@ class TrackShow extends React.Component {
             </div>
 
           </div>
+
         </div>
       );
     } else {

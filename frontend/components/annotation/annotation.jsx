@@ -21,7 +21,7 @@ class Annotation extends React.Component {
         <div className="annotation-box" style={{top: top}}>
           <h2>SweetSixteens Annotation</h2>
           {anno.body}
-          <CommentContainer annotationId={anno.id}/>
+          <CommentContainer commentableId={anno.id} commentableType="Annotation"/>
         </div>
       );
     } else {

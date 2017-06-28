@@ -13,8 +13,8 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return({
-    fetchComments: (annotationId) => {
-      dispatch(fetchComments(annotationId));
+    fetchComments: (commentableId) => {
+      dispatch(fetchComments(commentableId));
     },
     createComment: (comment) => {
       dispatch(createComment(comment));
