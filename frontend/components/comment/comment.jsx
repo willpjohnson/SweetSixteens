@@ -77,10 +77,17 @@ class Comment extends React.Component {
       let deleteIcon;
       if(this.props.currentUser && comment.author_id === this.props.currentUser.id) {
         deleteIcon = (
-          <button className="comment-icons-delete" onClick={this.handleDeleteComment} id={comment.id}><i className="fa fa-trash-o" aria-hidden="true"></i></button>
+          <i onClick={this.handleDeleteComment} id={comment.id} className="fa fa-trash-o" aria-hidden="true"></i>
         );
       } else {
         deleteIcon = <div></div>;
+      }
+
+      let scoreClass;
+      if (comment.score < 0) {
+        scoreClass = "icon-vote-score-negative";
+      } else {
+        scoreClass = "icon-vote-score-positive";
       }
 
       return(
@@ -93,10 +100,11 @@ class Comment extends React.Component {
             <h2>{this.timeSince(comment.created_at)}</h2>
           </div>
           {comment.body}<br />
-          <div className="comment-icons">
-            <i className="fa fa-thumbs-o-up" aria-hidden="true"></i>
-            <i className="fa fa-thumbs-o-down" aria-hidden="true"></i>
-            {deleteIcon}
+          <div className="icon-div">
+            <section className="icon-thumbs-up"><i className="fa fa-thumbs-o-up" aria-hidden="true"></i></section>
+            <section className={scoreClass}>{comment.score}</section>
+            <section className="icon-thumbs-down"><i className="fa fa-thumbs-o-down" aria-hidden="true"></i></section>
+            <section className="icon-trash">{deleteIcon}</section>
           </div>
         </li>
       );

@@ -1,5 +1,4 @@
 import * as APIUtil from '../util/annotation_api_util';
-
 import { receiveTrack } from './track_actions';
 
 export const RECEIVE_ANNOTATION = 'RECEIVE_ANNOTATION';

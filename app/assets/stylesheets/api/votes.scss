@@ -1,0 +1,66 @@
+// Place all the styles related to the Api::Votes controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.icon-div {
+  display: flex;
+  text-align: center;
+}
+
+.icon-div i {
+  cursor: pointer;
+}
+
+.icon-div section {
+  margin: 4px;
+}
+
+// THUMBS UP
+
+.icon-thumbs-up {
+  font-size: 16px;
+  position: relative;
+}
+
+.icon-thumbs-up:hover {
+  color: green;
+  position: relative;
+  top: -2px;
+  left: -2px;
+  font-size: 20px;
+  margin-bottom: 0;
+  margin-right: 0.5px;
+}
+
+// THUMBS DOWN
+
+.icon-thumbs-down {
+  font-size: 16px;
+  position: relative;
+}
+
+.icon-thumbs-down:hover {
+  color: red;
+  position: relative;
+  top: -2px;
+  left: -2px;
+  font-size: 20px;
+  margin-bottom: 0;
+  margin-right: 0.5px;
+}
+
+// TRASH
+
+.icon-trash {
+  font-size: 16px;
+  position: relative;
+}
+
+.icon-trash:hover {
+  position: relative;
+  top: -2px;
+  left: -2px;
+  font-size: 20px;
+  margin-bottom: 0;
+  margin-right: 0.5px;
+}

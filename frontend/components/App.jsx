@@ -3,10 +3,12 @@ import { Route, withRouter } from 'react-router-dom';
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
 import SessionFormContainer from './session_form_container';
 import NavbarContainer from './navbar/navbar_container';
+import FooterContainer from './footer_container';
 import UserShowContainer from './user_show_container';
 import TrackShowContainer from './track/track_show_container';
 import TrackIndexContainer from './track/track_index_container';
 import NewTrackContainer from './track/new_track_container';
+
 
 const App = (props) => {
   let authForm;
@@ -18,19 +20,23 @@ const App = (props) => {
     authForm = null;
   }
   return(
-    <div>
+    <div className="entire-app">
       <NavbarContainer />
 
-      {authForm}
+      <div className="all-content">
+        {authForm}
 
-      <AuthRoute path="/login" component={SessionFormContainer} />
-      <AuthRoute path="/signup" component={SessionFormContainer} />
+        <AuthRoute path="/login" component={SessionFormContainer} />
+        <AuthRoute path="/signup" component={SessionFormContainer} />
 
-      <Route exact path="/" component={TrackIndexContainer} />
+        <Route exact path="/" component={TrackIndexContainer} />
 
-      <Route path="/users/:id" component={UserShowContainer}/>
-      <Route exact path="/tracks/:id" component={TrackShowContainer}/>
-      <ProtectedRoute exact path="/new-track" component={NewTrackContainer}/>
+        <Route path="/users/:id" component={UserShowContainer}/>
+        <Route exact path="/tracks/:id" component={TrackShowContainer}/>
+        <ProtectedRoute exact path="/new-track" component={NewTrackContainer}/>
+      </div>
+
+      <FooterContainer />
     </div>
   );
 };

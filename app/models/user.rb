@@ -22,12 +22,13 @@ class User < ActiveRecord::Base
   has_attached_file :avatar, default_url: "default-profile-avatar.png"
   validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\z/
 
-  attr_reader :password
-  after_initialize :ensure_session_token
-
   has_many :comments,
     class_name: :Comment,
     foreign_key: :author_id
+  has_many :votes
+
+  attr_reader :password
+  after_initialize :ensure_session_token
 
   def self.find_by_credentials(username, password)
     @user = User.find_by(username: username)

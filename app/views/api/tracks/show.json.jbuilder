@@ -13,7 +13,7 @@ json.annotations do
 
   @track.annotations.each do |anno|
     json.set! anno.id do
-      json.extract! anno, :id, :start_idx, :end_idx, :body
+      json.extract! anno, :id, :start_idx, :end_idx, :body, :author_id, :score
     end
   end
 end

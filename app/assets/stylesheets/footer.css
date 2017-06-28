@@ -1,0 +1,7 @@
+.footer-div {
+  width: 100%;
+  height: 9vh;
+  min-height: 80px;
+  background-color: black;
+  bottom: 0;
+}

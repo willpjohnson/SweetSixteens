@@ -20,6 +20,19 @@ time, mark, audio, video {
  font-family: 'Open Sans', sans-serif;
  font-weight: bold;
 }
+
+html, body {
+  height: 100%;
+}
+
+.entire-app {
+  height: 100%;
+}
+
+.all-content {
+  min-height: 80vh;
+}
+
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {

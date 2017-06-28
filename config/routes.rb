@@ -10,6 +10,7 @@ Rails.application.routes.draw do
       resources :comments, only: [:index]
     end
     resources :comments, except: [:index]
+    resources :votes, only: [:create, :destroy]
   end
 
   root "static_pages#root"

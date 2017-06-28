@@ -104,20 +104,3 @@
 .comment-posted-extra-info {
   display: flex;
 }
-
-.comment-icons {
-  display: flex;
-  margin-top: 4px;
-}
-
-.comment-icons * {
-  padding-right: 3px;
-}
-
-.comment-icons-delete {
-  background-color: #e6e6f2;
-  border: none;
-  color: black;
-  text-decoration: none;
-  cursor: pointer;
-}

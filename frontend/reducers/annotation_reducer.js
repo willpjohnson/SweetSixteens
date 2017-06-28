@@ -22,10 +22,8 @@ const AnnotationReducer = (state = defaultState, action) => {
       newState.currentAnno = null;
       return newState;
     case RECEIVE_ANNOTATIONS:
-      // newState = {allAnno: action.annotations, currentAnno: {}, currentAnnoHeight: null};
       newState = merge({}, state, {allAnno: action.annotations});
       newState.currentAnno = null;
-      // newState = {allAnno: action.annotations, currentAnno: state.currentAnno, currentAnnoHeight: state.currentAnnoHeight}
       return newState;
     default:
       return state;

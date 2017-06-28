@@ -1,5 +1,6 @@
 .navbar-div {
-  height: 80px;
+  height: 8vh;
+  min-height: 76px;
   display: flex;
   justify-content: space-between;
   align-items: center;
