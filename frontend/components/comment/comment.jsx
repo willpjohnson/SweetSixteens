@@ -114,7 +114,7 @@ class Comment extends React.Component {
     let deleteIcon;
     if(currentUser && comment.author_id === currentUser.id) {
       deleteIcon = (
-        <i onClick={this.handleDeleteComment} className="fa fa-trash-o" aria-hidden="true"></i>
+        <i id={comment.id} onClick={this.handleDeleteComment} className="fa fa-trash-o" aria-hidden="true"></i>
       );
     } else {
       deleteIcon = <div></div>;

@@ -1,11 +1,16 @@
 // Place all the styles related to the Api::Users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.user-show-div {
+  height: 100%;
+  min-height: 85vh;
+}
+
 .user-show-banner {
   width: 100%;
   height: 300px;
+  overflow: hidden;
   // background-color: black;
-  z-index: -1
 }
 
 .user-show-banner img {
@@ -13,6 +18,8 @@
   height: 100%;
   object-fit: cover;
   filter: blur(5px) brightness(75%);
+  transform: scale(1.05);
+  z-index: -1;
 }
 
 .user-avatar-image {
@@ -22,9 +29,18 @@
   margin-left: -4px;
 }
 
+.user-show-edit-button {
+  border: 2px solid black;
+  background: white;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: bold;
+  font-size: 18px;
+  cursor: pointer;
+}
+
 .user-show-info-div {
   width: 28%;
-  height: 100%;
+  height: 700px;
   z-index: 0;
   position: absolute;
   top: 170px;

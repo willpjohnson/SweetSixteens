@@ -18,12 +18,24 @@
 
 .logo-div {
   width: 15%;
+  margin-top: -5px;
   margin-left: 20px;
   margin-right: 20px;
   text-align: center;
   cursor: pointer;
 
-  border: 1px solid black;
+  color: #fffc68;
+  text-shadow: -3px 3px 0px rgba(0, 0, 0, 1);
+}
+
+.logo-line-1 {
+  font-family: 'Fredoka One', cursive;
+  font-size: 25px;
+}
+
+.logo-line-2 {
+  font-family: 'Fredoka One', cursive;
+  font-size: 25px;
 }
 
 .user-div {

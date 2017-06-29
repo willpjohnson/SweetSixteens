@@ -55,7 +55,8 @@ class Navbar extends React.Component {
         </div>
 
         <div className="logo-div" onClick={this.handleGoHome}>
-          <h1>LOGO GOES HERE</h1>
+          <h1 className="logo-line-1">SWEET</h1>
+          <h1 className="logo-line-2">SIXTEENS</h1>
         </div>
 
         <div className="user-div">

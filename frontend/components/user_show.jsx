@@ -21,12 +21,17 @@ class UserShow extends React.Component {
           <div className="user-show-info-div">
             <img className="user-avatar-image" src={this.props.user.avatar_url}></img>
             <h1>@{this.props.user.username}</h1>
+            <button className="user-show-edit-button">
+              <i className="fa fa-pencil" aria-hidden="true"></i>Edit
+            </button>
           </div>
         </div>
       );
     } else {
       return(
-        <h1>Loading...</h1>
+        <div className="user-show-div">
+          <h1>Loading...</h1>
+        </div>
       );
     }
   }
