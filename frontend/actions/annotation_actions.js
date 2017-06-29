@@ -3,6 +3,8 @@ import { receiveTrack } from './track_actions';
 
 export const RECEIVE_ANNOTATION = 'RECEIVE_ANNOTATION';
 export const RECEIVE_ANNOTATIONS = 'RECEIVE_ANNOTATIONS';
+export const REMOVE_ANNOTATION = 'REMOVE_ANNOTATION';
+export const RECEIVE_HEIGHT = 'RECEIVE_HEIGHT';
 
 export const fetchAnnotation = (data) => dispatch => {
   const id = data[0];
@@ -24,6 +26,12 @@ export const createAnnotation = (annotation) => dispatch => {
   });
 };
 
+export const deleteAnnotation = (annotationId) => dispatch => {
+  return APIUtil.deleteAnnotation(annotationId).then( (annotation) => {
+    dispatch(removeAnnotation(annotation));
+  });
+};
+
 export const receiveAnnotation = (annotation, height) => {
   return({
     type: RECEIVE_ANNOTATION,
@@ -32,9 +40,23 @@ export const receiveAnnotation = (annotation, height) => {
   });
 };
 
+export const receiveHeight = (height) => {
+  return({
+    type: RECEIVE_HEIGHT,
+    height
+  })
+}
+
 export const receiveAnnotations = (annotations) => {
   return({
     type: RECEIVE_ANNOTATIONS,
     annotations
   });
+};
+
+export const removeAnnotation = (annotation) => {
+  return({
+    type: REMOVE_ANNOTATION,
+    annotation
+  })
 };

@@ -72,8 +72,10 @@ class TrackShow extends React.Component {
   annotationArea() {
     let annotationArea;
     if (this.state.displayForm) {
+      let top = this.props.currentAnnoHeight;
+      console.log(top);
       annotationArea = (
-        <div className="annotation-form-div">
+        <div className="annotation-form-div" style={{top: top}}>
           <form onSubmit={this.handleSubmit} className="annotation-form">
             <textarea value={this.state.annoInput} onChange={this.update()} className="annotation-form-input" placeholder="Write your own annotation..."/>
             <button>Save</button>
@@ -122,7 +124,9 @@ class TrackShow extends React.Component {
             <div className="track-show-lyrics-div">
               <Lyrics trackId={track.id} anno={this.props.anno}
                 lyrics={track.body} updateSelection={this.updateSelection}
-                fetchAnnotation={this.props.fetchAnnotation} receiveAnnotation={this.props.receiveAnnotation}
+                fetchAnnotation={this.props.fetchAnnotation}
+                receiveAnnotation={this.props.receiveAnnotation}
+                receiveHeight={this.props.receiveHeight}
               />
               <CommentContainer commentableId={track.id} commentableType="Track"/>
             </div>

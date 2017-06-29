@@ -25,3 +25,12 @@ export const createAnnotation = (annotation) => {
     })
   );
 };
+
+export const deleteAnnotation = (annotationId) => {
+  return(
+    $.ajax({
+      method: 'DELETE',
+      url: `/api/annotations/${annotationId}`
+    })
+  );
+};

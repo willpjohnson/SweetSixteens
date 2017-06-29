@@ -1,14 +1,20 @@
 class Api::VotesController < ApplicationController
   def create
     @vote = Vote.new(vote_params)
+
     if @vote.save
       if @vote.votable_type == "Annotation"
         annotation_id = @vote.votable_id
         @annotation = Annotation.find_by(id: annotation_id)
+        @annotation.score += @vote.value
+        @annotation.save!
         render "/api/annotations/show"
       elsif @vote.votable_type == "Comment"
         comment_id = @vote.votable_id
-        debugger
+        @comment = Comment.find_by(id: comment_id)
+        @comment.score += @comment.value
+        @comment.save!
+        render "/api/comments"
       end
     else
       render json: @vote.errors.full_messages, status: 422
@@ -16,7 +22,18 @@ class Api::VotesController < ApplicationController
   end
 
   def destroy
+    @vote = Vote.find_by(id: params[:id])
+    type = @vote.votable_type
+    votable_id = @vote.votable_id
+    @vote.destroy
+    if type == "Annotation"
+      @annotation = Annotation.find_by(id: votable_id)
+      @annotation.score -= @vote.value
+      @annotation.save!
+      render "/api/annotations/show"
+    elsif type == "Comment"
 
+    end
   end
 
   private

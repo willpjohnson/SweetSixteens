@@ -2,7 +2,7 @@ import { values } from 'lodash';
 import { connect } from 'react-redux';
 import TrackShow from './track_show';
 import { fetchTrack, deleteTrack } from '../../actions/track_actions';
-import { fetchAnnotation, fetchAnnotations, createAnnotation, receiveAnnotation } from '../../actions/annotation_actions';
+import { fetchAnnotation, fetchAnnotations, createAnnotation, receiveAnnotation, receiveHeight } from '../../actions/annotation_actions';
 
 const mapStateToProps = (state, ownProps) => {
   const trackId = parseInt(ownProps.match.params.id);
@@ -10,13 +10,15 @@ const mapStateToProps = (state, ownProps) => {
   const anno = track ?
   track.annotation_ids.map(annoId => state.annotation.allAnno[annoId]) : [];
   const currentAnno = state.annotation.currentAnno;
+  const currentAnnoHeight = state.annotation.currentAnnoHeight;
   const currentUser = state.session.currentUser;
   return({
     trackId,
     track,
     anno,
     currentAnno,
-    currentUser
+    currentUser,
+    currentAnnoHeight
   });
 };
 
@@ -39,6 +41,9 @@ const mapDispatchToProps = (dispatch) => {
     },
     receiveAnnotation: (annotation, height) => {
       dispatch(receiveAnnotation(annotation, height));
+    },
+    receiveHeight: (height) => {
+      dispatch(receiveHeight(height));
     }
   });
 };

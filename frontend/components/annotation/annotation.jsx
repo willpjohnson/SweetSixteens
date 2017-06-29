@@ -14,7 +14,7 @@ class Annotation extends React.Component {
   handleDeleteAnno(e) {
     e.preventDefault();
     const annoId = this.props.currentAnno.id;
-    console.log(annoId, "Delete");
+    this.props.deleteAnnotation(annoId);
   }
 
   handleUpvote(e) {
@@ -39,6 +39,16 @@ class Annotation extends React.Component {
       votable_id, votable_type, user_id, value
     };
     this.props.createVote(vote);
+  }
+
+  handleDeleteVote(e) {
+    e.preventDefault();
+    const voteData = {
+      user_id: this.props.currentUser.id,
+      votable_id: this.props.currentAnno.id,
+      votable_type: "Annotation"
+    };
+    this.props.deleteVote(voteData);
   }
 
   render() {

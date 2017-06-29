@@ -37,6 +37,7 @@ class Lyrics extends React.Component {
 
       i += 1;
     }
+    this.props.receiveHeight(height);
     this.props.updateSelection(selectionStartIdx, selectionEndIdx);
   }
 
@@ -46,9 +47,11 @@ class Lyrics extends React.Component {
     this.annoIds = {};
 
     this.props.anno.forEach((ann) => {
-      this.starts.push(ann.start_idx);
-      this.ends.push(ann.end_idx);
-      this.annoIds[ann.end_idx] = ann.id;
+      if (ann !== undefined) {
+        this.starts.push(ann.start_idx);
+        this.ends.push(ann.end_idx);
+        this.annoIds[ann.end_idx] = ann.id;
+      }
     });
   }
 

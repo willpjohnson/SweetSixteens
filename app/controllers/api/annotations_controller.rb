@@ -19,6 +19,12 @@ class Api::AnnotationsController < ApplicationController
     end
   end
 
+  def destroy
+    @annotation = Annotation.find_by(id: params[:id])
+    @annotation.destroy
+    render :show
+  end
+
   private
   def annotation_params
     params.require(:annotation).permit(:track_id, :author_id, :body, :score, :start_idx, :end_idx)
