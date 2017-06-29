@@ -9,7 +9,7 @@ const mapStateToProps = (state, ownProps) => {
   // String of formType indicating if 'login' or 'signup'
   const formType = ownProps.formType;
   return({
-    loggedIn: Boolean(state.session.currentUser),
+    loggedIn: Boolean(state.session.currentUser.id),
     errors: state.session.errors,
     formType
   });

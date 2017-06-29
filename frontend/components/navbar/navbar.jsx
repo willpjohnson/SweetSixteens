@@ -31,7 +31,7 @@ class Navbar extends React.Component {
 
   render() {
     let userArea;
-    if (this.props.currentUser !== null) {
+    if (this.props.currentUser.id !== null) {
       userArea = (
         <section className="yes-current-user-section">
           <div className="add-track"><Link to="/new-track">ADD TRACK</Link></div>
