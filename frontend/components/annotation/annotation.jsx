@@ -19,68 +19,85 @@ class Annotation extends React.Component {
 
   handleUpvote(e) {
     e.preventDefault();
-    const votable_id = this.props.currentAnno.id;
-    const votable_type = "Annotation";
-    const user_id = this.props.currentUser.id;
-    const value = 1;
-    const vote = {
-      votable_id, votable_type, user_id, value
-    };
-    this.props.createVote(vote);
+    this.vote(1);
   }
 
   handleDownvote(e) {
     e.preventDefault();
-    const votable_id = this.props.currentAnno.id;
-    const votable_type = "Annotation";
-    const user_id = this.props.currentUser.id;
-    const value = -1;
-    const vote = {
-      votable_id, votable_type, user_id, value
-    };
-    this.props.createVote(vote);
+    this.vote(-1);
   }
 
-  handleDeleteVote(e) {
-    e.preventDefault();
-    const voteData = {
-      user_id: this.props.currentUser.id,
-      votable_id: this.props.currentAnno.id,
-      votable_type: "Annotation"
-    };
-    this.props.deleteVote(voteData);
+  vote(value) {
+    if (this.props.currentUser) {
+      const votable_id = this.props.currentAnno.id;
+      const votable_type = "Annotation";
+      const user_id = this.props.currentUser.id;
+      const vote = {
+        votable_id, votable_type, user_id, value
+      };
+
+      if (this.props.currentUser.votes.Annotation[votable_id]) {
+        const oldVote = this.props.currentUser.votes.Annotation[votable_id];
+        this.props.deleteVote(oldVote);
+      } else {
+        this.props.createVote(vote);
+      }
+    }
+  }
+
+  iconConditionals() {
+    const currentUser = this.props.currentUser;
+    const anno = this.props.currentAnno;
+    let currentUserVote;
+    if (currentUser && currentUser.votes.Annotation[anno.id]) currentUserVote = currentUser.votes.Annotation[anno.id];
+
+
+    // TRASH ICON CONDITIONALS
+    let deleteIcon;
+    if(currentUser && anno.author_id === currentUser.id) {
+      deleteIcon = (
+        <i onClick={this.handleDeleteAnno} className="fa fa-trash-o" aria-hidden="true"></i>
+      );
+    } else {
+      deleteIcon = <div></div>;
+    }
+    // THUMBS UP ICON CONDITIONALS
+    let thumbsUpClass = "icon-thumbs-up";
+    if (currentUserVote && currentUserVote.value === 1) {
+      thumbsUpClass = "icon-thumbs-up upvoted";
+    }
+    // THUMBS DOWN ICON CONDITIONALS
+    let thumbsDownClass = "icon-thumbs-down";
+    if (currentUserVote && currentUserVote.value === -1) {
+      thumbsDownClass = "icon-thumbs-down downvoted";
+    }
+    // SCORE CONDITIONALS
+    let scoreClass;
+    if (anno.score < 0) {
+      scoreClass = "icon-vote-score-negative";
+    } else {
+      scoreClass = "icon-vote-score-positive";
+    }
+    let score;
+
+    return({ deleteIcon, thumbsUpClass, thumbsDownClass, scoreClass });
   }
 
   render() {
     const anno = this.props.currentAnno;
     if (anno) {
       let top = this.props.currentAnnoHeight;
-      let deleteIcon;
-      if(this.props.currentUser && anno.author_id === this.props.currentUser.id) {
-        deleteIcon = (
-          <i onClick={this.handleDeleteAnno} className="fa fa-trash-o" aria-hidden="true"></i>
-        );
-      } else {
-        deleteIcon = <div></div>;
-      }
-
-      let scoreClass;
-      if (anno.score < 0) {
-        scoreClass = "icon-vote-score-negative";
-      } else {
-        scoreClass = "icon-vote-score-positive";
-      }
-
+      let icons = this.iconConditionals();
 
       return(
         <div className="annotation-box" style={{top: top}}>
           <h2>SweetSixteens Annotation</h2>
           {anno.body}
           <div className="icon-div">
-            <section className="icon-thumbs-up"><i onClick={this.handleUpvote} className="fa fa-thumbs-o-up" aria-hidden="true"></i></section>
-            <section className={scoreClass}>{anno.score}</section>
-            <section className="icon-thumbs-down"><i onClick={this.handleDownvote} className="fa fa-thumbs-o-down" aria-hidden="true"></i></section>
-            <section className="icon-trash">{deleteIcon}</section>
+            <section className={icons.thumbsUpClass}><i onClick={this.handleUpvote} className="fa fa-thumbs-o-up" aria-hidden="true"></i></section>
+            <section className={icons.scoreClass}>{anno.score}</section>
+            <section className={icons.thumbsDownClass}><i onClick={this.handleDownvote} className="fa fa-thumbs-o-down" aria-hidden="true"></i></section>
+            <section className="icon-trash">{icons.deleteIcon}</section>
           </div>
 
           <CommentContainer commentableId={anno.id} commentableType="Annotation"/>

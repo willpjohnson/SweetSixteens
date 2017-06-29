@@ -11,6 +11,8 @@ class Comment extends React.Component {
 
     this.handleSubmitComment = this.handleSubmitComment.bind(this);
     this.handleDeleteComment = this.handleDeleteComment.bind(this);
+    this.handleUpvote = this.handleUpvote.bind(this);
+    this.handleDownvote = this.handleDownvote.bind(this);
   }
 
   componentDidMount() {
@@ -39,6 +41,36 @@ class Comment extends React.Component {
     e.preventDefault();
     const commentId = parseInt(e.currentTarget.id);
     this.props.deleteComment(commentId, this.props.commentableType);
+  }
+
+  handleUpvote(e) {
+    e.preventDefault();
+    let commentId = parseInt(e.currentTarget.id);
+    this.vote(1, commentId);
+  }
+
+  handleDownvote(e) {
+    e.preventDefault();
+    let commentId = parseInt(e.currentTarget.id);
+    this.vote(-1, commentId);
+  }
+
+  vote(value, commentId) {
+    if (this.props.currentUser) {
+      const votable_id = commentId;
+      const votable_type = "Comment";
+      const user_id = this.props.currentUser.id;
+      const vote = {
+        votable_id, votable_type, user_id, value
+      };
+
+      if (this.props.currentUser.votes.Comment && this.props.currentUser.votes.Comment[votable_id]) {
+        const oldVote = this.props.currentUser.votes.Comment[votable_id];
+        this.props.deleteVote(oldVote);
+      } else {
+        this.props.createVote(vote);
+      }
+    }
   }
 
   update() {
@@ -72,23 +104,46 @@ class Comment extends React.Component {
     return Math.floor(seconds) + " seconds ago";
   }
 
+  iconConditionals(comment) {
+    const currentUser = this.props.currentUser;
+    let currentUserVote;
+    if (currentUser && currentUser.votes && currentUser.votes.Comment && currentUser.votes.Comment[comment.id]) currentUserVote = currentUser.votes.Comment[comment.id];
+
+
+    // TRASH ICON CONDITIONALS
+    let deleteIcon;
+    if(currentUser && comment.author_id === currentUser.id) {
+      deleteIcon = (
+        <i onClick={this.handleDeleteComment} className="fa fa-trash-o" aria-hidden="true"></i>
+      );
+    } else {
+      deleteIcon = <div></div>;
+    }
+    // THUMBS UP ICON CONDITIONALS
+    let thumbsUpClass = "icon-thumbs-up";
+    if (currentUserVote && currentUserVote.value === 1) {
+      thumbsUpClass = "icon-thumbs-up upvoted";
+    }
+    // THUMBS DOWN ICON CONDITIONALS
+    let thumbsDownClass = "icon-thumbs-down";
+    if (currentUserVote && currentUserVote.value === -1) {
+      thumbsDownClass = "icon-thumbs-down downvoted";
+    }
+    // SCORE CONDITIONALS
+    let scoreClass;
+    if (comment.score < 0) {
+      scoreClass = "icon-vote-score-negative";
+    } else {
+      scoreClass = "icon-vote-score-positive";
+    }
+    let score;
+
+    return({ deleteIcon, thumbsUpClass, thumbsDownClass, scoreClass });
+  }
+
   render() {
     const commentLis = this.props.comments.map( (comment, index) => {
-      let deleteIcon;
-      if(this.props.currentUser && comment.author_id === this.props.currentUser.id) {
-        deleteIcon = (
-          <i onClick={this.handleDeleteComment} id={comment.id} className="fa fa-trash-o" aria-hidden="true"></i>
-        );
-      } else {
-        deleteIcon = <div></div>;
-      }
-
-      let scoreClass;
-      if (comment.score < 0) {
-        scoreClass = "icon-vote-score-negative";
-      } else {
-        scoreClass = "icon-vote-score-positive";
-      }
+      let icons = this.iconConditionals(comment);
 
       return(
         <li className="comment-list-item" key={index}>
@@ -101,10 +156,10 @@ class Comment extends React.Component {
           </div>
           {comment.body}<br />
           <div className="icon-div">
-            <section className="icon-thumbs-up"><i className="fa fa-thumbs-o-up" aria-hidden="true"></i></section>
-            <section className={scoreClass}>{comment.score}</section>
-            <section className="icon-thumbs-down"><i className="fa fa-thumbs-o-down" aria-hidden="true"></i></section>
-            <section className="icon-trash">{deleteIcon}</section>
+            <section className={icons.thumbsUpClass}><i onClick={this.handleUpvote} id={comment.id} className="fa fa-thumbs-o-up" aria-hidden="true"></i></section>
+            <section className={icons.scoreClass}>{comment.score}</section>
+            <section className={icons.thumbsDownClass}><i onClick={this.handleDownvote} id={comment.id} className="fa fa-thumbs-o-down" aria-hidden="true"></i></section>
+            <section className="icon-trash">{icons.deleteIcon}</section>
           </div>
         </li>
       );

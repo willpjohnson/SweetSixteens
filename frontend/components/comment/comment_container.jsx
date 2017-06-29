@@ -3,6 +3,7 @@ import { withRouter } from 'react-router-dom';
 import values from 'lodash/values';
 import Comment from './comment';
 import { fetchAnnotationComments, fetchTrackComments, createComment, deleteComment } from '../../actions/comment_actions';
+import { createVote, deleteVote } from '../../actions/vote_actions';
 
 const mapStateToProps = (state, ownProps) => {
   let comments;
@@ -36,6 +37,12 @@ const mapDispatchToProps = (dispatch, ownProps) => {
     },
     deleteComment: (commentId, commentableType) => {
       dispatch(deleteComment(commentId, commentableType));
+    },
+    createVote: (vote) => {
+      dispatch(createVote(vote));
+    },
+    deleteVote: (vote) => {
+      dispatch(deleteVote(vote));
     },
     fetchComments
   });

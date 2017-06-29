@@ -23,8 +23,8 @@ const mapDispatchToProps = (dispatch) => {
     createVote: (vote) => {
       dispatch(createVote(vote));
     },
-    deleteVote: (voteData) => {
-      dispatch(deleteVote(voteData));
+    deleteVote: (vote) => {
+      dispatch(deleteVote(vote));
     }
   });
 };

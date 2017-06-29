@@ -22,6 +22,10 @@
   position: relative;
 }
 
+.upvoted {
+  color: green
+}
+
 .icon-thumbs-up:hover {
   color: green;
   position: relative;
@@ -37,6 +41,10 @@
 .icon-thumbs-down {
   font-size: 16px;
   position: relative;
+}
+
+.downvoted {
+  color: red;
 }
 
 .icon-thumbs-down:hover {
