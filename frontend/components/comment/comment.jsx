@@ -64,7 +64,7 @@ class Comment extends React.Component {
         votable_id, votable_type, user_id, value
       };
 
-      if (this.props.currentUser.votes.Comment && this.props.currentUser.votes.Comment[votable_id]) {
+      if (this.props.currentUser.votes && this.props.currentUser.votes.Comment && this.props.currentUser.votes.Comment[votable_id]) {
         const oldVote = this.props.currentUser.votes.Comment[votable_id];
         this.props.deleteVote(oldVote);
       } else {

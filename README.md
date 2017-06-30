@@ -8,7 +8,26 @@ SweetSixteens is a full-stack web application inspired by Genius.  It utilizes R
 
 ## Features and Implementation
 
-The primary feature of this application is song lyric annotation. SweetSixteens is a community curated database for information, opinions, and analysis of lyrics. This is brought to life through extensive user interaction. Users can add tracks to the database which, in turn, can be annotated by other users who have deeper information about specific sections. To foster further interaction, all tracks and annotations can be commented on and all annotations and comments can be up or down voted.
+The primary feature of this application is song lyric annotation. SweetSixteens is a community curated database for information, opinions, and analysis of lyrics. This is brought to life through extensive user interaction. Users can add tracks to the database which, in turn, can be annotated by other users who have deeper information about specific sections. To foster further interaction, all tracks and annotations can be commented on and all annotations and comments can be up or down voted. Here is a breakdown of some of the foremost features:
+
+* Track Index Page (Home Page)
+  * Navbar
+    * Search (live search)
+    * User info (links to log in if logged out, user dropdown if logged in)
+  * List of top 10 tracks
+* Track Show Page
+  * Annotated lyrics
+  * Comment section at bottom
+* Track Annotation
+  * Upvotes and Downvotes
+  * Comment section at the bottom
+* Comment Section
+  * Upvotes and Downvotes
+* Add Track Page
+  * Submit new track with artist, title, lyrics, tags, and track art
+* User Page
+  * Displays user avatar and information
+  * Link to edit user form
 
 ### Track Annotation
 
@@ -69,3 +88,23 @@ while (i < currentSeg) {
   i += 1;
 }
 ```
+
+With this functionality, users can add their two cents to any song in the database (or even add their own song).
+
+### Comments and Upvotes
+
+While annotation is certainly the purpose of the app, commenting and upvoting allow for a community of like-minded users to all contribute their input.
+
+Comments can be created on either annotations or tracks by any logged in user. The form is just a simple text input which immediately appends new comments to the bottom of the <ul>.
+
+![image of comments](public/comments.png)
+
+If a user is logged in, they can choose to upvote or downvote any comment. If a user is logged in as the author of the comment, they are able to delete the comment from the database.
+
+Users can upvote or downvote any comment or annotation. All votable components also display their current 'score', or sum total of up and down votes.
+
+![image of upvote](public/upvote.png)
+
+With these two features, SweetSixteens becomes a truly immersive social experience as well as a helpful annotation tool.
+
+## Future Developments

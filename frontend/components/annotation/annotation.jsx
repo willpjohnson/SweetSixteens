@@ -55,7 +55,7 @@ class Annotation extends React.Component {
     const currentUser = this.props.currentUser;
     const anno = this.props.currentAnno;
     let currentUserVote;
-    if (currentUser && currentUser.votes.Annotation[anno.id]) currentUserVote = currentUser.votes.Annotation[anno.id];
+    if (currentUser && currentUser.votes && currentUser.votes.Annotation && currentUser.votes.Annotation[anno.id]) currentUserVote = currentUser.votes.Annotation[anno.id];
 
 
     // TRASH ICON CONDITIONALS
