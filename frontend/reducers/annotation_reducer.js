@@ -1,6 +1,6 @@
 import merge from 'lodash/merge';
 
-import { RECEIVE_ANNOTATION, RECEIVE_ANNOTATIONS, REMOVE_ANNOTATION, RECEIVE_HEIGHT } from '../actions/annotation_actions';
+import { RECEIVE_ANNOTATION, RECEIVE_ANNOTATIONS, REMOVE_ANNOTATION, RECEIVE_HEIGHT, UNSELECT_ANNOTATION } from '../actions/annotation_actions';
 import { RECEIVE_TRACK } from '../actions/track_actions';
 import { RECEIVE_ANNOTATION_VOTE, REMOVE_ANNOTATION_VOTE } from '../actions/vote_actions';
 
