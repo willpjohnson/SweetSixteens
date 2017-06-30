@@ -13,7 +13,9 @@ const TrackReducer = (state = defaultState, action) => {
     case RECEIVE_TRACK:
       return merge({}, state, {entities: {[action.track.id]: action.track}} );
     case RECEIVE_TRACKS:
-      return merge({}, state, {entities: action.tracks});
+      newState = merge({}, state);
+      newState.entities = action.tracks;
+      return newState;
     case REMOVE_TRACK:
       newState = merge({}, state);
       delete newState.entities[action.track.track.id];

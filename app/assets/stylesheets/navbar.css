@@ -12,6 +12,7 @@
   margin-left: 20px;
   margin-right: 20px;
   text-align: left;
+  position: relative;
 }
 
 .search-bar {
@@ -22,6 +23,15 @@
   font-weight: bold;
   font-size: 16px;
   padding: 4px;
+  padding-right: 30px;
+}
+
+.search-icon {
+  position: absolute;
+  font-size: 20px;
+  top: 8px;
+  right: -28px;
+  z-index: 5;
 }
 
 .logo-div {

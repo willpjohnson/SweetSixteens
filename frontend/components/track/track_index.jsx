@@ -10,6 +10,12 @@ class TrackIndex extends React.Component {
     this.props.fetchTracks();
   }
 
+  componentWillReceiveProps(nextProps) {
+    if(nextProps.tracks.length > 10) {
+      this.props.fetchTracks();
+    }
+  }
+
   render() {
     const trackLis = this.props.tracks.map((track, index) => {
       let topThree;
