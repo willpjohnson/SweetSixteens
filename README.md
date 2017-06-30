@@ -45,3 +45,27 @@ while (i < lyrics.length) {
 ```
 
 Every annotation has a start index and end index property, which I've put into arrays. As the while loop iterates through all the lyric characters, it checks to see if the character index is either an annotation start index or an annotation end index. If it is, it flips the switch on a boolean called "hasAnno" which indicates whether future characters are in an annotated segment or not. Ultimately, every character will be placed into one of two types of html spans: annotated or regular. This collection of spans is ultimately what is rendered on the page.
+
+When viewing a track's lyrics, a user may also decide to write an annotation of their own on a segment that is untouched.
+
+![image of annotation form](public/annotation_form.png)
+
+By selecting a section of text, a user causes a popup "Create Annotation" window to appear on the right. The user can then type in their notes and assign it to start and end indexes of the selection via some iteration over the spans as previously established in the previous section (note that the spans have a 'name' property that simply indicates their index in the array of spans).
+
+```javascript
+let selectionStartIdx = window.getSelection().anchorOffset;
+let selectionEndIdx = window.getSelection().focusOffset;
+const currentSeg = parseInt(e.currentTarget.getAttribute('name'));
+
+let i = 0;
+
+while (i < currentSeg) {
+  let testSeg = document.getElementsByName(i);
+  let testSegLength = testSeg[0].innerHTML.length;
+
+  selectionStartIdx += testSegLength;
+  selectionEndIdx += testSegLength;
+
+  i += 1;
+}
+```
