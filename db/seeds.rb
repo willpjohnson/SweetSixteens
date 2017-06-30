@@ -7,6 +7,9 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 User.destroy_all
 will = User.create({username: 'willpjohnson', password: 'fullstack', avatar: File.open('app/assets/images/admin.jpg')})
+biz = User.create({username: 'bizmarkie', password: 'password', avatar: File.open('app/assets/images/biz.jpg')})
+fp = User.create({username: 'thefreshprince', password: 'password', avatar: File.open('app/assets/images/fp.jpg')})
+future = User.create({username: 'future', password: 'password', avatar: File.open('app/assets/images/future.jpg')})
 guest = User.create({username: 'Guest', password: 'password'})
 
 pjdu_pic = File.open('app/assets/images/pjdu_pic.jpg')
