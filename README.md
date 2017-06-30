@@ -1,24 +1,17 @@
-# README
+#SweetSixteens
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+[SweetSixteens][heroku]
 
-Things you may want to cover:
+[heroku]: http://www.sweetsixteens.herokuapp.com
 
-* Ruby version
+SweetSixteens is a full-stack web application inspired by Genius.  It utilizes Ruby on Rails on the backend, a PostgreSQL database, and React.js with a Redux architectural framework on the frontend.  
 
-* System dependencies
+##Features and Implementation
 
-* Configuration
+The primary feature of this application is song lyric annotation. SweetSixteens is a community curated database for information, opinions, and analysis of lyrics. This is brought to life through extensive user interaction. Users can add tracks to the database which, in turn, can be annotated by other users who have deeper information about specific sections. To foster further interaction, all tracks and annotations can be commented on and all annotations and comments can be up or down voted.
 
-* Database creation
+###Track Annotation
 
-* Database initialization
 
-* How to run the test suite
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+![image of track show](public/track_show.png)
