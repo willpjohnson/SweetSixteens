@@ -9,6 +9,8 @@ User.destroy_all
 will = User.create({username: 'willpjohnson', password: 'fullstack', avatar: File.open('app/assets/images/admin.jpg')})
 guest = User.create({username: 'Guest', password: 'password'})
 
+pjdu_pic = File.open('app/assets/images/pjdu_pic.jpg')
+wyk_pic = File.open('app/assets/images/wyk_pic.jpg')
 pyn_pic = File.open('app/assets/images/pyn_pic.jpg')
 so_pic = File.open('app/assets/images/so_pic.jpg')
 humble_pic = File.open('app/assets/images/humble_pic.jpg')
@@ -17,8 +19,269 @@ tdial_pic = File.open('app/assets/images/tdial_pic.jpg')
 doys_pic = File.open('app/assets/images/doys_pic.jpg')
 fl_pic = File.open('app/assets/images/fl_pic.png')
 jaf_pic = File.open('app/assets/images/jaf_pic.jpg')
+maskoff_pic = File.open('app/assets/images/maskoff_pic.jpg')
+hi_pic = File.open('app/assets/images/hi_pic.jpg')
 
 Track.destroy_all
+
+
+pjdu = Track.create({
+  author_id: will.id,
+  title: "Parents Just Don\'t Understand",
+  body: "[Intro]
+You know parents are the same no matter time nor place
+They don't understand that us kids are gonna make some mistakes
+So to you other kids all across the land
+There's no need to argue, parents just don't understand
+
+[Verse 1]
+I remember one year
+My mom took me school shopping
+It was me, my brother, my mom, oh, my pop, and my little sister
+All hopped in the car
+We headed downtown to the Gallery Mall
+My mom started bugging with the clothes she chose
+I didn't say nothing at first
+I just turned up my nose
+She said, \"What\'s wrong? This shirt cost $20\"
+I said, \"Mom, this shirt is plaid with a butterfly collar!\"
+The next half hour was the same old thing
+My mother buying me clothes from 1963
+And then she lost her mind and did the ultimate
+I asked her for Adidas and she bought me Zips!
+I said, \"Mom, what are you doing, you\'re ruining my rep\"
+She said, \"You\'re only sixteen, you don\'t have a rep yet\"
+I said, \"Mom, let\'s put these clothes back, please\"
+She said \"no, you go to school to learn not for a fashion show\"
+I said, \"This isn\'t Sha Na Na, come on Mom, I\'m not Bowzer
+Mom, please put back the bell-bottom Brady Bunch trousers
+But if you don't want to I can live with that but
+You gotta put back the double-knit reversible slacks\"
+She wasn\'t moved - everything stayed the same
+Inevitably the first day of school came
+I thought I could get over, I tried to play sick
+But my mom said, \"No, no way, uh-uh, forget it\"
+There was nothing I could do, I tried to relax
+I got dressed up in those ancient artifacts
+And when I walked into school, it was just as I thought
+The kids were cracking up laughing at the clothes Mom bought
+And those who weren't laughing still had a ball
+Because they were pointing and whispering
+As I walked down the hall
+I got home and told my Mom how my day went
+She said, \"If they were laughing you don\'t need them
+Cause they're not good friends\"
+For the next six hours I tried to explain to my Mom
+That I was gonna have to go through this about 200 more times
+So to you all the kids all across the land
+There's no need to argue
+Parents just don't understand
+
+[Verse 2]
+Oh-kay, here's the situation
+My parents went away on a week's vacation and
+They left the keys to the brand new Porsche
+Would they mind?
+Umm, well, of course not
+I'll just take it for a little spin
+And maybe show it off to a couple of friends
+I'll just cruise it around the neighborhood
+Well, maybe I shouldn't—
+Yeah, of course I should
+Pay attention, here's the thick of the plot
+I pulled up to the corner at the end of my block
+That's when I saw this beautiful girlie girl walking
+I picked up my car phone to perpetrate like I was talking
+You should've seen this girl's bodily dimensions
+I honked my horn just to get her attention
+She said, \"Was that for me?\"
+I said, \"Yeah\"
+She said, \"Why?\"
+I said, \"Come on and take a ride with a helluva guy\"
+She said, \"How do I know you\'re not sick?
+You could be some deranged lunatic\"
+I said, \"C\'mon, toots, my name is the Prince
+Besides, would a lunatic have a Porsche like this?\"
+She agreed and we were on our way
+She was looking very good and so was I, I must say - word
+We hit McDonald's, pulled into the drive
+We ordered two Big Macs and two large fries with Cokes
+She kicked her shoes off onto the floor
+She said, \"Drive fast, speed turns me on\"
+She put her hand on my knee, I put my foot on the gas
+We almost got whiplash, I took off so fast
+The sun roof was open , the music was high
+And this girl's hand was steadily moving up my thigh
+She had opened up three buttons on her shirt so far
+I guess that\'s why I didn't notice that police car
+We're doing ninety in my Mom's new Porsche
+And to make this long story short - short
+When the cop pulled me over I was scared as hell
+I said, \"I don\'t have a license but I drive very well, officer\"
+I almost had a heart attack that day
+Come to find out the girl was a twelve-year-old runaway
+I was arrested, the car was impounded
+There was no way for me to avoid being grounded
+My parents had to come off from vacation to get me
+I'd rather be in jail than to have my father hit me
+My parents walked in
+I got my grip, I said, \"Ah, Mom, Dad... how was your trip?\"
+They didn't speak - I said, \"I want to plead my case\"
+But my father just shoved me in the car by my face
+That was a hard ride home, I don't know how I survived
+They took turns - one would beat me while the other was driving
+I can't believe it, I just made a mistake
+Well parents are the same no matter time nor place
+So to you other kids all across the land
+Take it from me, parents just don't understand",
+  artist: "DJ Jazzy Jeff & The Fresh Prince",
+  image: pjdu_pic})
+
+wyk = Track.create({
+  author_id: will.id,
+  title: "What You Know",
+  body: "[Chorus]
+Ayy, ayy, ayy, ayy, ayy
+What you know about that?
+What you know about that?
+What you know about that?
+Ay, don't you know I got key by the three
+When I chirp shawty chirp back
+Louie knapsack where I'm holding all the work at
+What you know about that?
+What you know about that?
+What you know about that?
+Hey I know all about that
+Loaded .44 on the low where the cheese at?
+Fresh out the jet to the 'jects where the G's at
+What you know about that?
+What you know about that?
+What you know about that?
+Hey I know all about that
+
+[Verse 1]
+See me in your city, sittin' pretty know I'm shinin dog
+Ridin' with a couple Latin broads and a China doll
+And you know how we ball
+Riding in shiny cars
+Walk in designer malls
+Buy everything we saw
+You know about me dog
+Don't talk about me dog
+And if you doubt me dog
+You better out me dog
+I'm throwed off slightly bro
+Don't wanna fight me bro
+I'm fast as lightning bro
+You better use your Nike's bro
+Know you don't like me cause
+Your bitch most likely does
+She see me on them dubs
+In front of every club
+I be on dro I'm buzzed
+Gave every ho a hug
+Niggas don't show me mugs
+Cause you don't know me cuz
+
+[Chorus]
+Ayy, ayy, ayy, ayy, ayy
+What you know about that?
+What you know about that?
+What you know about that?
+Ay, don't you know I got key by the three
+When I chirp shawty chirp back
+Louie knapsack where I'm holding all the work at
+What you know about that?
+What you know about that?
+What you know about that?
+Hey I know all about that
+Loaded .44 on the low where the cheese at?
+Fresh out the jet to the 'jects where the G's at
+What you know about that?
+What you know about that?
+What you know about that?
+Hey I know all about that
+
+[Verse 2]
+Candy on the six four
+Leather guts and fish bowl
+Fifty on my pinky ring just to make my fist glow
+Your bitches get low
+Because I get dough
+So what I'm rich ho
+I'll still pull a kick do'
+What you talking shit for
+You gotta run and get four
+Got you yelling and I thought you pull out a gun hit four
+But you's a scary dude
+Believed by very few
+Just keep it very cool
+Or we will bury you
+See all that attitude's, unnecessary dude
+You never carry tools not even square, he cube
+You got these people fooled, who see me on the tube
+Whatever try the crew, they'll see you on the news
+
+
+[Chorus]
+Ayy, ayy, ayy, ayy, ayy
+What you know about that?
+What you know about that?
+What you know about that?
+Ay, don't you know I got key by the three
+When I chirp shawty chirp back
+Louie knapsack where I'm holding all the work at
+What you know about that?
+What you know about that?
+What you know about that?
+Hey I know all about that
+Loaded .44 on the low where the cheese at?
+Fresh out the jet to the 'jects where the G's at
+What you know about that?
+What you know about that?
+What you know about that?
+Hey I know all about that
+
+[Verse 3]
+Fresh off the jet to the block
+Burning rubber with the top popped
+My partners busting shots, I'll tell them \"stop, it make the block hot\"
+Yo label got got
+Cuz you are not hot
+I got the top spot
+And it will not stop
+A video or not that will bust it 'til the Glock stop
+Drag you out that Bentley Coupe and take it to the chop shop
+Although we not y'all
+If it may pop off
+I'll answer the question \"Will I get your block knocked off?\"
+This what it is bro
+Look I will kill bro
+I'm in your hood if you a gangsta what you hid for
+Somebody better get bro before he get sent for
+You say you wanna squash it what you still talking shit for
+
+
+[Chorus]
+Ayy, ayy, ayy, ayy, ayy
+What you know about that?
+What you know about that?
+What you know about that?
+Ay, don't you know I got key by the three
+When I chirp shawty chirp back
+Louie knapsack where I'm holding all the work at
+What you know about that?
+What you know about that?
+What you know about that?
+Hey I know all about that
+Loaded .44 on the low where the cheese at?
+Fresh out the jet to the 'jects where the G's at
+What you know about that?
+What you know about that?
+What you know about that?
+Hey I know all about that",
+  artist: "T.I.",
+  image: wyk_pic})
 
 pyn = Track.create({
   author_id: will.id,
@@ -867,6 +1130,169 @@ So please listen to the message that I say
 Don't ever talk to a girl who says she just has a friend",
   artist: "Biz Markie",
   image: jaf_pic})
+
+maskoff = Track.create({
+  author_id: will.id,
+  title: "Mask Off",
+  body: "[Intro]
+Call it how it is
+Hendrix
+I promise, I swear, I swear
+You heard, spit it, yo
+
+[Chorus]
+Percocets, molly, Percocets
+Percocets, molly, Percocets
+Rep the set, gotta rep the set
+Chase a check, never chase a bitch
+Mask on, fuck it, mask off
+Mask on, fuck it, mask off
+Percocets, molly, Percocets
+Chase a check, never chase a bitch
+Don't chase no bitches
+
+[Verse 1]
+Two cups, toast up with the gang
+From food stamps to a whole 'nother domain
+Out the bottom, I'm the livin' proof (Super)
+Ain't compromising, half a million on the coupe
+Drug houses, lookin' like Peru
+Graduated, I was overdue
+Pink molly, I can barely move
+Ask about me, I'm gon' bust a move
+Rick James, thirty-three chains
+Ocean air, cruisin' Biscayne
+Top off, that’s a liability
+Hit the gas, boostin' my adrenaline
+
+[Chorus]
+Percocets, molly, Percocets
+Percocets, molly, Percocets
+Rep the set, gotta rep the set
+Chase a check, never chase a bitch
+Mask on, fuck it, mask off
+Mask on, fuck it, mask off
+Percocets, molly, Percocets
+Chase a check, never chase a bitch
+Don't chase no bitches
+
+[Verse 2]
+Four-door Maybach, I drive anything
+Buy my Range, make 'em go insane
+(Oh my Lord, praise him be)
+My guillotine, drank promethazine
+TEC and beams, go to those extremes
+Parliament, calamari Wednesday
+Parlay in Vegas, we was in attendance
+Before the business, Theodore lenses
+Theo-Dur prescriptions, focus on the missions
+Intermission, never take a break
+Switch states, touch down, foreign plates
+Ain't no way, ain't no fuckin' way
+We call the play, we didn't come to play
+Rob the bank, we gon' rob the game
+They gang, we gang
+But they are not the same (Freebandz)
+
+
+[Chorus]
+Percocets, molly, Percocets
+Percocets, molly, Percocets
+Rep the set, gotta rep the set
+Chase a check, never chase a bitch
+Mask on, fuck it, mask off
+Mask on, fuck it, mask off
+Percocets, molly, Percocets
+Chase a check, never chase a bitch
+Don't chase no bitches
+
+[Outro]
+Mask on, fuck it, mask off
+Mask on, fuck it, mask off
+Mask on, fuck it, mask off
+Gas gone, never nod off
+(Cold chills, prison cells)
+(Oh my Lord, praise him be)",
+  artist: "Future",
+  image: maskoff_pic})
+
+hi = Track.create({
+  author_id: will.id,
+  title: "Holidae In",
+  body: "[Intro: Snoop Dogg]
+Bomb ass pussy
+Ma, ooh you got that bomb, know you got it
+Ma, ooh you got some bomb ass pussy
+Ma I know you got that bomb bomb pussy
+
+[Hook: Snoop/Chingy + Girl]
+(Whachu doing?) Nothing chilling at the Holiday Inn!
+(Who you with?) Me and my peeps thought you'd bring over your friends
+(What we gon' do?) Feel on each other and sip on some Hen
+One thing leading to another let the party begin
+(Whachu doing?) Nothing chilling at the Holiday Inn!
+(Who you with?) Me and my peeps thought you'd bring over your friends
+(What we gon' do?) Feel on each other and sip on some Hen
+One thing leading to another let the party begin
+
+[Verse 1: Chingy]
+Peeps call me up [phone ring] said it's a ho-tel party
+Just bring the liquor, there's already eight shawties
+I'm on my way, let me stop by the store
+Get a 12-pack of Corona - plus an ounce of 'dro, ya know?
+Now I'm on Highway 270 to Natural Bridge Rd
+I'm already blowed, hit third I'mma be be blowed some mo'
+Pulled up, stop parked, rims still spinning
+Valet looking like he in the game and must be winning
+To room 490 I'm headed, on my way up
+It's three girls on the elevator like: \"wassup?\"
+I told em: \"follow me\". they knew I had it cracking B
+One said \"ain\'t you that boy that be on BET?\"
+\"Ya that's me, Ching-a-ling equipped with much ding-a-ling\"
+Knock on the door, I'm on the scene of things
+Busted in, Henny bottle to the face
+Fuck it then, feel like my head is toxic waste
+It's some pretty girls in hurr, I heard em whispering
+Talking bout \"that\'s that dude that sing \"Right Thurr\" - he glistening\"
+I ain\'t come to talk, I ain\'t come to sit
+What I came for was to find out who I\'m gonna hit, aww shit
+
+[Hook: Snoop/Chingy + Girl]
+(Whachu doing?) Nothing chilling at the Holiday Inn!
+(Who you with?) Me and my peeps thought you'd bring over your friends
+(What we gon' do?) Feel on each other and sip on some Hen
+One thing leading to another let the party begin
+(Whachu doing?) Nothing chilling at the Holiday Inn!
+(Who you with?) Me and my peeps thought you'd bring over your friends
+(What we gon' do?) Feel on each other and sip on some Hen
+One thing leading to another let the party begin
+
+[Verse 2: Chingy]
+Ma showed up like \"what\'s the hold up?\"
+Man know what, get them wraps and roll up
+I took a chick in the bathroom seeing what\'s poppin
+You know what\'s on my mind, shirts off and panties dropping
+Niggas knocking on the door drunk, acting silly
+The girl said \"can I be in yo video\" I\'m like \"yeah!\", \"oh really?\"
+Now she naked strip teasing, me I'm just cheesing
+She gave me a reason to be a damn heathen
+Handled that, told ol' G, bring tha camera
+Then I thought about, no footage as I ram her
+Walked out the bathroom smiling, cats still wilding
+Sharing the next room with some girls looking like they from an island
+
+[Hook: Snoop + Chingy]
+(Whachu doing?) Nothing chilling at the Holiday Inn!
+(Who you with?) Me and my peeps thought you'd bring over your friends
+(What we gon' do?) Feel on each other and sip on some Hen
+One thing leading to another let the party begin
+(Whachu doing?) Nothing chilling at the Holiday Inn!
+(Who you with?) Me and my peeps thought you'd bring over your friends
+(What we gon' do?) Feel on each other and sip on some Hen
+One thing leading to another let the party begin",
+  artist: "Chingy",
+  image: hi_pic})
+
 
 Annotation.destroy_all
 pyn1 = Annotation.create({
