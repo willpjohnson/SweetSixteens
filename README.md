@@ -107,4 +107,14 @@ Users can upvote or downvote any comment or annotation. All votable components a
 
 With these two features, SweetSixteens becomes a truly immersive social experience as well as a helpful annotation tool.
 
-## Future Developments
+## Future Direction
+
+In addition to the features demonstrated, I would like to add the following functionality to SweetSixteens in the future.
+
+### Tagging
+
+I would like to add a robust tagging system where users can tag tracks with genre data for easy search and comparison.
+
+### Streaming
+
+The track pages could benefit from having a streaming component to play audio or video of the track in question while you read the lyrics and annotations. 
