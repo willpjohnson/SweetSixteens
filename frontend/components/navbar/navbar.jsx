@@ -22,7 +22,10 @@ class Navbar extends React.Component {
   }
 
   handleGuest() {
-    this.props.login({user: {username: 'Guest', password: 'password'}});
+    let formData = new FormData();
+    formData.append("user[username]", 'Guest');
+    formData.append("user[password]", 'password');
+    this.props.login(formData);
   }
 
   handleGoHome() {
@@ -51,7 +54,7 @@ class Navbar extends React.Component {
     return (
       <div className="navbar-div">
         <div className="search-bar-div">
-          <h1>SEARCH BAR GOES HERE</h1>
+          <input className="search-bar"></input>
         </div>
 
         <div className="logo-div" onClick={this.handleGoHome}>

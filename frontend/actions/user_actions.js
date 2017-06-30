@@ -4,7 +4,7 @@ export const RECEIVE_USER = 'RECEIVE_USER';
 
 export const receiveUser = (userId) => dispatch => {
   return APIUtil.fetchUser(userId).then( (user) => {
-    dispatch(receiveSingleUser(user));
+    return dispatch(receiveSingleUser(user));
   });
 };
 

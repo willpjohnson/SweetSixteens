@@ -16,9 +16,12 @@ const App = (props) => {
     authForm = (<SessionFormContainer formType="login"/>);
   } else if (props.location.search === "?signup=true") {
     authForm = (<SessionFormContainer formType="signup"/>);
+  } else if (props.location.search === "?edit=true") {
+    authForm = (<SessionFormContainer formType="edit"/>);
   } else {
     authForm = null;
   }
+
   return(
     <div className="entire-app">
       <NavbarContainer />

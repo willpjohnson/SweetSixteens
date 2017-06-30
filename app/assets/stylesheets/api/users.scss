@@ -22,22 +22,6 @@
   z-index: -1;
 }
 
-.user-avatar-image {
-  border-radius: 50%;
-  border: 4px solid #fffc68;
-  width: 100%;
-  margin-left: -4px;
-}
-
-.user-show-edit-button {
-  border: 2px solid black;
-  background: white;
-  font-family: 'Open Sans', sans-serif;
-  font-weight: bold;
-  font-size: 18px;
-  cursor: pointer;
-}
-
 .user-show-info-div {
   width: 28%;
   height: 700px;
@@ -53,4 +37,29 @@
   margin: 10px;
   font-size: 30px;
   font-weight: bolder;
+}
+
+.user-avatar-image {
+  width: 360px;
+  height: 360px;
+  border-radius: 50%;
+  border: 4px solid #fffc68;
+  height: 100%;
+  max-height: 360px;
+  max-width: 360px;
+  min-height: 360px;
+  min-width: 360px;
+  margin-left: -4px;
+}
+
+.user-show-edit-button {
+  border: 2px solid black;
+  background: white;
+  font-family: 'Open Sans', sans-serif;
+  color: black;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 18px;
+  cursor: pointer;
+  padding: 4px;
 }

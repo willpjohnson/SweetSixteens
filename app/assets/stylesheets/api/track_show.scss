@@ -81,6 +81,11 @@
   cursor: pointer;
 }
 
+.track-show-info-delete:hover {
+  background-color: #fffc68;
+  color: black;
+}
+
 // LYRICS AND ANNOTATIONS
 
 .track-show-lyrics-and-annotations-div {
@@ -132,13 +137,26 @@
   white-space: pre-wrap;
 }
 
+.annotation-exit-button {
+  position: absolute;
+  top: 2px;
+  right: -10px;
+  cursor: pointer;
+}
+
+.annotation-exit-button:hover {
+  color: #fffc68;
+  text-shadow: #000 0px 0px 1px;
+}
+
 .annotation-form-div {
-  display: relative;
+  position: fixed;
+  top: 500px;
   padding: 12px;
   margin-top: 10px;
-  width: 80%;
+  width: 300px;
 
-  border: 1px solid black;
+  border-left: 4px solid black;
 }
 
 .annotation-form-input {
@@ -148,5 +166,36 @@
   font-family: 'Open Sans', sans-serif;
   font-weight: bold;
   font-size: 14px;
-  background-color: #bfbfbf;
+  background-color: #e6e6f2;
+  border-radius: 2px;
+  padding: 12px;
+}
+
+.annotation-form-submit-button {
+  margin-top: 4px;
+  cursor: pointer;
+  border: 2px solid black;
+  color: black;
+  background-color: white;
+  display: inline-block;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: bold;
+  font-size: 14px;
+  padding: 2px;
+}
+
+.annotation-form-submit-button:hover {
+  background-color: #fffc68;
+}
+
+.annotation-form-exit-button {
+  position: absolute;
+  top: 12px;
+  right: -10px;
+  cursor: pointer;
+}
+
+.annotation-form-exit-button:hover {
+  color: #fffc68;
+  text-shadow: #000 0px 0px 1px;
 }

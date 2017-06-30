@@ -35,7 +35,6 @@
   margin-top: 8px;
   margin-bottom: 8px;
   font-size: 16px;
-  border: 2px solid #b7b7b7;
   width: 100%;
   align-items: center;
 }
@@ -63,4 +62,16 @@
   background-color: red;
   color: white;
   float: left;
+}
+
+.username-select {
+  border: 2px solid #b7b7b7;
+}
+
+.password-select {
+  border: 2px solid #b7b7b7;
+}
+
+.user-avatar-select {
+  border: none;
 }

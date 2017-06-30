@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import Annotation from './annotation';
-import { fetchAnnotation, deleteAnnotation } from '../../actions/annotation_actions';
+import { fetchAnnotation, deleteAnnotation, unselectAnnotation } from '../../actions/annotation_actions';
 import { createVote, deleteVote } from '../../actions/vote_actions';
 
 const mapStateToProps = (state) => {
@@ -25,6 +25,9 @@ const mapDispatchToProps = (dispatch) => {
     },
     deleteVote: (vote) => {
       dispatch(deleteVote(vote));
+    },
+    unselectAnnotation: () => {
+      dispatch(unselectAnnotation());
     }
   });
 };

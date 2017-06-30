@@ -5,6 +5,7 @@ export const RECEIVE_ANNOTATION = 'RECEIVE_ANNOTATION';
 export const RECEIVE_ANNOTATIONS = 'RECEIVE_ANNOTATIONS';
 export const REMOVE_ANNOTATION = 'REMOVE_ANNOTATION';
 export const RECEIVE_HEIGHT = 'RECEIVE_HEIGHT';
+export const UNSELECT_ANNOTATION = 'UNSELECT_ANNOTATION';
 
 export const fetchAnnotation = (data) => dispatch => {
   const id = data[0];
@@ -60,3 +61,9 @@ export const removeAnnotation = (annotation) => {
     annotation
   })
 };
+
+export const unselectAnnotation = () => {
+  return({
+    type: UNSELECT_ANNOTATION
+  })
+}

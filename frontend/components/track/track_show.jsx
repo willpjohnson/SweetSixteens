@@ -66,21 +66,19 @@ class TrackShow extends React.Component {
   }
 
   exitForm() {
-    this.setState({displayForm: false});
+    this.setState({displayForm: false, annoInput: ""});
   }
 
   annotationArea() {
     let annotationArea;
     if (this.state.displayForm) {
-      let top = this.props.currentAnnoHeight;
-      console.log(top);
       annotationArea = (
-        <div className="annotation-form-div" style={{top: top}}>
+        <div className="annotation-form-div">
           <form onSubmit={this.handleSubmit} className="annotation-form">
             <textarea value={this.state.annoInput} onChange={this.update()} className="annotation-form-input" placeholder="Write your own annotation..."/>
-            <button>Save</button>
+            <button className="annotation-form-submit-button">Save</button>
+            <p className="annotation-form-exit-button" onClick={this.exitForm}><i className="fa fa-times" aria-hidden="true"></i></p>
           </form>
-          <button onClick={this.exitForm}>Exit</button>
         </div>
       );
     } else {

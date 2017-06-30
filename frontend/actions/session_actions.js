@@ -1,11 +1,13 @@
 import * as APIUtil from '../util/session_api_util';
 
+import { receiveUser } from './user_actions';
+
 export const RECEIVE_CURRENT_USER = 'RECEIVE_CURRENT_USER';
 export const RECEIVE_NULL_USER = 'RECEIVE_NULL_USER';
 export const RECEIVE_ERRORS = 'RECEIVE_ERRORS';
 
-export const login = (user) => dispatch => {
-  return APIUtil.login(user).then(
+export const login = (formData) => dispatch => {
+  return APIUtil.login(formData).then(
     user => dispatch(receiveCurrentUser(user)),
     errors => dispatch(receiveErrors(errors.responseJSON))
   );
@@ -17,12 +19,22 @@ export const logout = () => dispatch => {
   ));
 };
 
-export const signup = (user) => dispatch => {
-  return APIUtil.signup(user)
+export const signup = (formData) => dispatch => {
+  return APIUtil.signup(formData)
     .then(
       user => dispatch(receiveCurrentUser(user)),
       errors => dispatch(receiveErrors(errors.responseJSON))
       // err => dispatch(receiveErrors(err))
+    );
+};
+
+export const edit = (formData, id) => dispatch => {
+  return APIUtil.edit(formData, id)
+    .then(
+      (user) => {
+        return dispatch(receiveUser(user.id));
+      },
+      errors => dispatch(receiveErrors(errors.responseJSON))
     );
 };
 

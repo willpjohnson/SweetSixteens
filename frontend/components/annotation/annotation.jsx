@@ -9,6 +9,7 @@ class Annotation extends React.Component {
     this.handleDeleteAnno = this.handleDeleteAnno.bind(this);
     this.handleUpvote = this.handleUpvote.bind(this);
     this.handleDownvote = this.handleDownvote.bind(this);
+    this.handleExit = this.handleExit.bind(this);
   }
 
   handleDeleteAnno(e) {
@@ -25,6 +26,11 @@ class Annotation extends React.Component {
   handleDownvote(e) {
     e.preventDefault();
     this.vote(-1);
+  }
+
+  handleExit(e) {
+    e.preventDefault();
+    this.props.unselectAnnotation();
   }
 
   vote(value) {
@@ -99,7 +105,7 @@ class Annotation extends React.Component {
             <section className={icons.thumbsDownClass}><i onClick={this.handleDownvote} className="fa fa-thumbs-o-down" aria-hidden="true"></i></section>
             <section className="icon-trash">{icons.deleteIcon}</section>
           </div>
-
+          <p className="annotation-exit-button" onClick={this.handleExit}><i className="fa fa-times" aria-hidden="true"></i></p>
           <CommentContainer commentableId={anno.id} commentableType="Annotation"/>
         </div>
       );
