@@ -1,0 +1,36 @@
+.search-index-div {
+  width: 300px;
+  background-color: white;
+  border: 1px solid black;
+  top: 80px;
+  position: absolute;
+  z-index: 5;
+}
+
+.search-item-link {
+  color: black;
+  text-decoration: none;
+}
+
+.search-item-div {
+  padding-right: 10px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.search-item-div:hover {
+  background-color: #efefff;
+}
+
+.search-item-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2px;
+}
+
+.search-item-image {
+  height: 60px;
+  width: 60px;
+  border: 2px solid black;
+}

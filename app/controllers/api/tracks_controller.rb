@@ -5,7 +5,11 @@ class Api::TracksController < ApplicationController
   end
 
   def index
-    @top_tracks = Track.order('created_at DESC').limit(10)
+    if params[:searchData]
+      @top_tracks = Track.where("lower(title) LIKE ?", "%#{params[:searchData].downcase}%").limit(10)
+    else
+      @top_tracks = Track.order('created_at DESC').limit(10)
+    end
     render :index
   end
 
@@ -23,15 +27,6 @@ class Api::TracksController < ApplicationController
     @track.destroy
     render :show
   end
-
-  # def update
-  #   @track = Track.find_by(id: params[:id])
-  #   if @track.update(track_params)
-  #     render :show
-  #   else
-  #     render json: @track.errors.full_messages, status: 422
-  #   end
-  # end
 
   private
   def track_params

@@ -64,12 +64,12 @@ class SessionForm extends React.Component {
     let footerText;
     let avatarInput;
     if (this.props.formType === 'login') {
-      headerText = (<h1>SIGN IN TO GENIUS</h1>);
+      headerText = (<h1>SIGN IN TO SweetSixteens</h1>);
       footerText = (<Link to={`${this.props.location.pathname}?signup=true`}>CREATE AN ACCOUNT</Link>);
       avatarInput = <div></div>;
       buttonText = 'Sign In';
     } else if (this.props.formType === 'signup') {
-      headerText = (<h1>SIGN UP FOR GENIUS</h1>);
+      headerText = (<h1>SIGN UP FOR SweetSixteens</h1>);
       footerText = (<Link to={`${this.props.location.pathname}?login=true`}>ALREADY HAVE AN ACCOUNT? SIGN IN HERE</Link>);
       avatarInput = (<div><input id="avatarFile" type="file" className="user-avatar-select" onChange={this.updateFile}/>
       <label className="ntf-file-select-label" htmlFor="avatarFile"><h2>Choose Image</h2></label></div>);

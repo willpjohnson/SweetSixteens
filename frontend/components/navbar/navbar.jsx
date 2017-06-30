@@ -1,11 +1,12 @@
 import React from 'react';
 import { Link, Route, NavLink, withRouter } from 'react-router-dom';
 import UserDropdown from './user_dropdown';
+import SearchIndex from './search_index_container';
 
 class Navbar extends React.Component {
   constructor (props) {
     super(props);
-    this.state = {'visible_dropdown': false};
+    this.state = {'visible_dropdown': false, 'search_text': ""};
 
     this.turnOnDropdown = this.turnOnDropdown.bind(this);
     this.turnOffDropdown = this.turnOffDropdown.bind(this);
@@ -32,6 +33,12 @@ class Navbar extends React.Component {
     window.location.href = "/#/";
   }
 
+  updateSearch() {
+    return e => {
+      this.setState({search_text: e.currentTarget.value});
+    };
+  }
+
   render() {
     let userArea;
     if (this.props.currentUser.id !== null) {
@@ -54,7 +61,8 @@ class Navbar extends React.Component {
     return (
       <div className="navbar-div">
         <div className="search-bar-div">
-          <input className="search-bar"></input>
+          <input onChange={this.updateSearch()} value={this.state.search_text} className="search-bar" placeholder="Search..."></input>
+          <SearchIndex searchText={this.state.search_text}/>
         </div>
 
         <div className="logo-div" onClick={this.handleGoHome}>
