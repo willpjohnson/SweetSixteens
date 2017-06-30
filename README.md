@@ -2,7 +2,7 @@
 
 [SweetSixteens][heroku]
 
-[heroku]: sweetsixteens.herokuapp.com/#/
+[heroku]: http://sweetsixteens.herokuapp.com/#/
 
 SweetSixteens is a full-stack web application inspired by Genius.  It utilizes Ruby on Rails on the backend, a PostgreSQL database, and React.js with a Redux architectural framework on the frontend.  
 
