@@ -34,7 +34,10 @@ class SearchIndex extends React.Component {
             <Link className="search-item-link" to={`/tracks/${track.id}`}>
               <div className="search-item-info">
                 <img className="search-item-image" src={track.image_url}></img>
-                {track.title}
+                <div className="search-item-metadata">
+                  <p className="search-item-metadata-title">{track.title}</p>
+                  <p className="search-item-metadata-artist">{track.artist}</p>
+                </div>
               </div>
             </Link>
           </div>

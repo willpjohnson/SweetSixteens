@@ -1,7 +1,19 @@
 .footer-div {
   width: 100%;
-  height: 9vh;
+  height: 6vh;
   min-height: 80px;
   background-color: black;
   bottom: 0;
+  display: flex;
+  align-items: center;
+}
+
+.footer-links {
+  margin: 0 auto;
+}
+
+.footer-links a {
+  color: white;
+  font-size: 30px;
+  margin: 10px;
 }
