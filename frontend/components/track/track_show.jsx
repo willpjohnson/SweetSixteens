@@ -139,7 +139,7 @@ class TrackShow extends React.Component {
       );
     } else {
       return(
-        <h1>Loading...</h1>
+        <div className="loader"></div>
       );
     }
   }

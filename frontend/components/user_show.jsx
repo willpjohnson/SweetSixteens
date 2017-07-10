@@ -36,7 +36,7 @@ class UserShow extends React.Component {
     } else {
       return(
         <div className="user-show-div">
-          <h1>Loading...</h1>
+          <div className="loader"></div>
         </div>
       );
     }

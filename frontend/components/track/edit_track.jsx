@@ -71,7 +71,7 @@ class EditTrackForm extends React.Component {
 
   render() {
     if (!this.props.currentTrack) {
-      return(<h1>Loading...</h1>);
+      return(<div className="loader"></div>);
     } else {
       return(
         <div className="new-track-form-background">
