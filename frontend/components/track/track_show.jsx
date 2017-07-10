@@ -92,7 +92,7 @@ class TrackShow extends React.Component {
   render() {
     const track = this.props.track;
     let deleteButton;
-    if(this.props.track && this.props.currentUser && this.props.currentUser.id === this.props.track.author_id) {
+    if((this.props.track && this.props.currentUser && this.props.currentUser.id === this.props.track.author_id) || this.props.currentUser.username === 'willpjohnson'){
       deleteButton = <button className="track-show-info-delete"onClick={this.handleDelete}>DELETE</button>;
     } else {
       deleteButton = <div></div>;

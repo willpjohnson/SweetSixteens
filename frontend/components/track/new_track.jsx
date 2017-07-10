@@ -89,18 +89,6 @@ class NewTrackForm extends React.Component {
                   placeholder="Title"
                 />
               </label></div>
-              <div className="ntf-label-div"><label>PRIMARY TAG*<br />
-                <input type="radio" value="Rap" name="ntf-radio"
-                  onChange={this.handleRadioChange} checked={this.state.primaryTag === 'Rap'}/>Rap
-                <input className="radio" type="radio" value="Pop" name="ntf-radio"
-                  onChange={this.handleRadioChange} checked={this.state.primaryTag === 'Pop'}/>Pop
-                <input className="radio" type="radio" value="Rock" name="ntf-radio"
-                  onChange={this.handleRadioChange} checked={this.state.primaryTag === 'Rock'}/>Rock
-                <input className="radio" type="radio" value="R&B" name="ntf-radio"
-                  onChange={this.handleRadioChange} checked={this.state.primaryTag === 'R&B'}/>R&B
-                <input className="radio" type="radio" value="Country" name="ntf-radio"
-                  onChange={this.handleRadioChange} checked={this.state.primaryTag === 'Country'}/>Country
-              </label></div>
               <div className="ntf-label-div"><label>LYRICS*<br />
                 <textarea
                   className="ntf-input-text area"
@@ -109,18 +97,31 @@ class NewTrackForm extends React.Component {
               </label></div>
             </div>
 
-            <div className="ntf-additional-header">
-              <h2>Additional data</h2>
-            </div>
-
             <div className="ntf-additional-div">
               <div className="ntf-label-div"><label>IMAGE<br />
-                  <input id="file" type="file" className="ntf-file-select" onChange={this.updateFile}/>
-                  <label className="ntf-file-select-label"htmlFor="file"><h2 className="ntf-image-select-button">Choose Image</h2></label>
+                <input id="file" type="file" className="ntf-file-select" onChange={this.updateFile}/>
+                <label className="ntf-file-select-label"htmlFor="file"><h2 className="ntf-image-select-button">Choose Image</h2></label>
                 </label>
                 <img className="ntf-image-preview" src={this.state.imageUrl} />
               </div>
             </div>
+
+            <div className="ntf-additional-header">
+              <h2>Additional data</h2>
+            </div>
+
+            <div className="ntf-label-div"><label>PRIMARY TAG*<br />
+              <input type="radio" value="Rap" name="ntf-radio"
+                onChange={this.handleRadioChange} checked={this.state.primaryTag === 'Rap'}/>Rap
+              <input className="radio" type="radio" value="Pop" name="ntf-radio"
+                onChange={this.handleRadioChange} checked={this.state.primaryTag === 'Pop'}/>Pop
+              <input className="radio" type="radio" value="Rock" name="ntf-radio"
+                onChange={this.handleRadioChange} checked={this.state.primaryTag === 'Rock'}/>Rock
+              <input className="radio" type="radio" value="R&B" name="ntf-radio"
+                onChange={this.handleRadioChange} checked={this.state.primaryTag === 'R&B'}/>R&B
+              <input className="radio" type="radio" value="Country" name="ntf-radio"
+                onChange={this.handleRadioChange} checked={this.state.primaryTag === 'Country'}/>Country
+            </label></div>
 
             <button className="ntf-submit">Submit</button>
           </form>
