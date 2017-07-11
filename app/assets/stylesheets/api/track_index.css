@@ -139,13 +139,19 @@
   text-decoration: none;
   display: table-cell;
   vertical-align: middle;
+  padding-left: 10px;
+
+}
+
+.genre-nav.active {
+  background-color: #efefff;
 }
 
 .track-index-genre-list li {
   border-bottom: 1px solid #969696;
   width: 100%;
   height: 45px;
-  padding-left: 10px;
+  /*padding-left: 10px;*/
   align-items: center;
   display: table;
 }

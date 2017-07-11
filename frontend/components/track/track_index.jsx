@@ -7,7 +7,20 @@ class TrackIndex extends React.Component {
   }
 
   componentDidMount() {
-    this.props.fetchTracks();
+    let path = this.props.match.path
+    if (path === '/') {
+      this.props.fetchTracks();
+    } else if (path === '/70s') {
+      this.props.fetch70sTracks();;
+    } else if (path === '/80s') {
+      this.props.fetch80sTracks();
+    } else if (path === '/90s') {
+      this.props.fetch90sTracks();
+    } else if (path === '/00s') {
+      this.props.fetch00sTracks();
+    } else if (path === '/10s') {
+      this.props.fetch10sTracks();
+    }
   }
 
   componentWillReceiveProps(nextProps) {
@@ -62,12 +75,12 @@ class TrackIndex extends React.Component {
           <div className="track-index-genre-div">
             <div className="track-index-genre-dummy"></div>
             <ul className="track-index-genre-list">
-              <li><NavLink className="genre-nav" to="/">ALL GENRES</NavLink></li>
-              <li><NavLink className="genre-nav" to="/">RAP</NavLink></li>
-              <li><NavLink className="genre-nav" to="/">POP</NavLink></li>
-              <li><NavLink className="genre-nav" to="/">ROCK</NavLink></li>
-              <li><NavLink className="genre-nav" to="/">R&B</NavLink></li>
-              <li><NavLink className="genre-nav" to="/">COUNTRY</NavLink></li>
+              <li><NavLink activeClassName="active" className="genre-nav" exact to="/">ALL DECADES</NavLink></li>
+              <li><NavLink activeClassName="active" className="genre-nav" to="/70s">70s</NavLink></li>
+              <li><NavLink activeClassName="active" className="genre-nav" to="/80s">80s</NavLink></li>
+              <li><NavLink activeClassName="active" className="genre-nav" to="/90s">90s</NavLink></li>
+              <li><NavLink activeClassName="active" className="genre-nav" to="/00s">00s</NavLink></li>
+              <li><NavLink activeClassName="active" className="genre-nav" to="/10s">10s</NavLink></li>
             </ul>
           </div>
         </div>

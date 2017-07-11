@@ -111,16 +111,16 @@ class NewTrackForm extends React.Component {
             </div>
 
             <div className="ntf-label-div"><label>PRIMARY TAG*<br />
-              <input type="radio" value="Rap" name="ntf-radio"
-                onChange={this.handleRadioChange} checked={this.state.primaryTag === 'Rap'}/>Rap
-              <input className="radio" type="radio" value="Pop" name="ntf-radio"
-                onChange={this.handleRadioChange} checked={this.state.primaryTag === 'Pop'}/>Pop
-              <input className="radio" type="radio" value="Rock" name="ntf-radio"
-                onChange={this.handleRadioChange} checked={this.state.primaryTag === 'Rock'}/>Rock
-              <input className="radio" type="radio" value="R&B" name="ntf-radio"
-                onChange={this.handleRadioChange} checked={this.state.primaryTag === 'R&B'}/>R&B
-              <input className="radio" type="radio" value="Country" name="ntf-radio"
-                onChange={this.handleRadioChange} checked={this.state.primaryTag === 'Country'}/>Country
+              <input type="radio" value="70s" name="ntf-radio"
+                onChange={this.handleRadioChange} checked={this.state.primaryTag === '70s'}/>70s
+              <input className="radio" type="radio" value="80s" name="ntf-radio"
+                onChange={this.handleRadioChange} checked={this.state.primaryTag === '80s'}/>80s
+              <input className="radio" type="radio" value="90s" name="ntf-radio"
+                onChange={this.handleRadioChange} checked={this.state.primaryTag === '90s'}/>90s
+              <input className="radio" type="radio" value="00s" name="ntf-radio"
+                onChange={this.handleRadioChange} checked={this.state.primaryTag === '00s'}/>00s
+              <input className="radio" type="radio" value="10s" name="ntf-radio"
+                onChange={this.handleRadioChange} checked={this.state.primaryTag === '10s'}/>10s
             </label></div>
 
             <button className="ntf-submit">Submit</button>

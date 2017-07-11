@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import TrackIndex from './track_index';
-import { fetchTracks } from '../../actions/track_actions';
+import { fetchTracks, fetch70sTracks, fetch80sTracks,fetch90sTracks, fetch00sTracks, fetch10sTracks } from '../../actions/track_actions';
 import { values } from 'lodash';
 
 const mapStateToProps = (state) => {
@@ -17,6 +17,21 @@ const mapDispatchToProps = (dispatch) => {
   return({
     fetchTracks: () => {
       dispatch(fetchTracks());
+    },
+    fetch70sTracks: () => {
+      dispatch(fetch70sTracks());
+    },
+    fetch80sTracks: () => {
+      dispatch(fetch80sTracks());
+    },
+    fetch90sTracks: () => {
+      dispatch(fetch90sTracks());
+    },
+    fetch00sTracks: () => {
+      dispatch(fetch00sTracks());
+    },
+    fetch10sTracks: () => {
+      dispatch(fetch10sTracks());
     }
   });
 };

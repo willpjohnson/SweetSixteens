@@ -16,6 +16,16 @@ export const fetchTracks = () => {
   );
 };
 
+export const fetchDecadeTracks = (decade) => {
+  return(
+    $.ajax({
+      method: 'GET',
+      url: `/api/tracks`,
+      data: { decade }
+    })
+  );
+};
+
 export const createTrack = (formData) => {
   return(
     $.ajax({
@@ -33,18 +43,6 @@ export const deleteTrack = (trackId) => {
     $.ajax({
       method: 'DELETE',
       url: `/api/tracks/${trackId}`
-    })
-  );
-};
-
-export const updateTrack = (formData, trackId) => {
-  return(
-    $.ajax({
-      method: 'PATCH',
-      url: `/api/tracks/${trackId}`,
-      data: formData,
-      contentType: false,
-      processData: false
     })
   );
 };

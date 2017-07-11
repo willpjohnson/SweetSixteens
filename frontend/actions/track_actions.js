@@ -18,6 +18,38 @@ export const fetchTracks = () => dispatch => {
   });
 };
 
+// SPECIFIC DECADES
+export const fetch70sTracks = () => dispatch => {
+  return APIUtil.fetchDecadeTracks('70s').then( (tracks) => {
+    dispatch(receiveTracks(tracks));
+  });
+};
+
+export const fetch80sTracks = () => dispatch => {
+  return APIUtil.fetchDecadeTracks('80s').then( (tracks) => {
+    dispatch(receiveTracks(tracks));
+  });
+};
+
+export const fetch90sTracks = () => dispatch => {
+  return APIUtil.fetchDecadeTracks('90s').then( (tracks) => {
+    dispatch(receiveTracks(tracks));
+  });
+};
+
+export const fetch00sTracks = () => dispatch => {
+  return APIUtil.fetchDecadeTracks('00s').then( (tracks) => {
+    dispatch(receiveTracks(tracks));
+  });
+};
+
+export const fetch10sTracks = () => dispatch => {
+  return APIUtil.fetchDecadeTracks('10s').then( (tracks) => {
+    dispatch(receiveTracks(tracks));
+  });
+};
+// END SPECIFIC DECADES
+
 export const createTrack = (track) => dispatch => {
   return APIUtil.createTrack(track).then( (track) => {
     dispatch(receiveTrack(track.track));

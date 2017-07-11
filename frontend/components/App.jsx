@@ -33,6 +33,11 @@ const App = (props) => {
         <AuthRoute path="/signup" component={SessionFormContainer} />
 
         <Route exact path="/" component={TrackIndexContainer} />
+        <Route exact path="/70s" component={TrackIndexContainer}/>
+        <Route exact path="/80s" component={TrackIndexContainer}/>
+        <Route exact path="/90s" component={TrackIndexContainer}/>
+        <Route exact path="/00s" component={TrackIndexContainer}/>
+        <Route exact path="/10s" component={TrackIndexContainer}/>
 
         <Route path="/users/:id" component={UserShowContainer}/>
         <Route exact path="/tracks/:id" component={TrackShowContainer}/>

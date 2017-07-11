@@ -7,6 +7,12 @@ class Api::TracksController < ApplicationController
   def index
     if params[:searchData]
       @top_tracks = Track.where("lower(title) LIKE ?", "%#{params[:searchData].downcase}%").limit(10)
+    elsif params[:decade]
+      @top_tracks = Track
+        .joins("INNER JOIN taggings ON tracks.id = taggings.track_id")
+        .joins("INNER JOIN tags ON taggings.tag_id = tags.id")
+        .where("tags.name = ?", params[:decade])
+        .order('created_at DESC').limit(10)
     else
       @top_tracks = Track.order('created_at DESC').limit(10)
     end
