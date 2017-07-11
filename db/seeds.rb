@@ -19,20 +19,6 @@ nin = Tag.create({name: '90s'})
 zer = Tag.create({name: '00s'})
 one = Tag.create({name: '10s'})
 
-Tagging.destroy_all
-Tagging.create({tag_id: eig.id, track_id: pjdu.id})
-Tagging.create({tag_id: zer.id, track_id: wyk.id})
-Tagging.create({tag_id: nin.id, track_id: pyn.id})
-Tagging.create({tag_id: nin.id, track_id: so.id})
-Tagging.create({tag_id: one.id, track_id: humble.id})
-Tagging.create({tag_id: one.id, track_id: putp.id})
-Tagging.create({tag_id: one.id, track_id: tdial.id})
-Tagging.create({tag_id: zer.id, track_id: doys.id})
-Tagging.create({tag_id: zer.id, track_id: fl.id})
-Tagging.create({tag_id: eig.id, track_id: jaf.id})
-Tagging.create({tag_id: one.id, track_id: maskoff.id})
-Tagging.create({tag_id: zer.id, track_id: hi.id})
-
 pjdu_pic = File.open('app/assets/images/pjdu_pic.jpg')
 wyk_pic = File.open('app/assets/images/wyk_pic.jpg')
 pyn_pic = File.open('app/assets/images/pyn_pic.jpg')
@@ -47,8 +33,6 @@ maskoff_pic = File.open('app/assets/images/maskoff_pic.jpg')
 hi_pic = File.open('app/assets/images/hi_pic.jpg')
 
 Track.destroy_all
-
-
 pjdu = Track.create({
   author_id: will.id,
   title: "Parents Just Don\'t Understand",
@@ -1414,3 +1398,17 @@ jaf2 = Annotation.create({
   body: "Biz wants to date this girl, but she is with another man who she says is 'just a friend'.",
   start_idx: 985, end_idx: 1080
   })
+
+Tagging.destroy_all
+Tagging.create({tag_id: eig.id, track_id: pjdu.id})
+Tagging.create({tag_id: zer.id, track_id: wyk.id})
+Tagging.create({tag_id: nin.id, track_id: pyn.id})
+Tagging.create({tag_id: nin.id, track_id: so.id})
+Tagging.create({tag_id: one.id, track_id: humble.id})
+Tagging.create({tag_id: one.id, track_id: putp.id})
+Tagging.create({tag_id: one.id, track_id: tdial.id})
+Tagging.create({tag_id: zer.id, track_id: doys.id})
+Tagging.create({tag_id: zer.id, track_id: fl.id})
+Tagging.create({tag_id: eig.id, track_id: jaf.id})
+Tagging.create({tag_id: one.id, track_id: maskoff.id})
+Tagging.create({tag_id: zer.id, track_id: hi.id})
