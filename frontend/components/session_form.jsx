@@ -42,8 +42,6 @@ class SessionForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    // const user = this.state;
-    // this.props.processForm({user});
     let formData = new FormData();
     formData.append("user[username]", this.state.username);
     formData.append("user[password]", this.state.password);
@@ -53,7 +51,6 @@ class SessionForm extends React.Component {
 
     let that = this;
     this.props.processForm(formData, this.props.currentUserId).then( (response) => {
-      console.log("This might work", response);
       that.props.history.push(`/users/${that.props.currentUserId}`);
     });
   }
