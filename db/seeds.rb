@@ -12,6 +12,27 @@ fp = User.create({username: 'thefreshprince', password: 'password', avatar: File
 future = User.create({username: 'future', password: 'password', avatar: File.open('app/assets/images/future.jpg')})
 guest = User.create({username: 'Guest', password: 'password'})
 
+Tag.destroy_all
+sev = Tag.create({name: '70s'})
+eig = Tag.create({name: '80s'})
+nin = Tag.create({name: '90s'})
+zer = Tag.create({name: '00s'})
+one = Tag.create({name: '10s'})
+
+Tagging.destroy_all
+Tagging.create({tag_id: eig.id, track_id: pjdu.id})
+Tagging.create({tag_id: zer.id, track_id: wyk.id})
+Tagging.create({tag_id: nin.id, track_id: pyn.id})
+Tagging.create({tag_id: nin.id, track_id: so.id})
+Tagging.create({tag_id: one.id, track_id: humble.id})
+Tagging.create({tag_id: one.id, track_id: putp.id})
+Tagging.create({tag_id: one.id, track_id: tdial.id})
+Tagging.create({tag_id: zer.id, track_id: doys.id})
+Tagging.create({tag_id: zer.id, track_id: fl.id})
+Tagging.create({tag_id: eig.id, track_id: jaf.id})
+Tagging.create({tag_id: one.id, track_id: maskoff.id})
+Tagging.create({tag_id: zer.id, track_id: hi.id})
+
 pjdu_pic = File.open('app/assets/images/pjdu_pic.jpg')
 wyk_pic = File.open('app/assets/images/wyk_pic.jpg')
 pyn_pic = File.open('app/assets/images/pyn_pic.jpg')
