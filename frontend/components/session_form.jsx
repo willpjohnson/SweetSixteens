@@ -8,13 +8,23 @@ class SessionForm extends React.Component {
     this.state = {
       username: "",
       password: "",
-      imageFile: null,
-      imageUrl: null
+      imageFile: undefined,
+      imageUrl: undefined
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleExit = this.handleExit.bind(this);
     this.updateFile = this.updateFile.bind(this);
+  }
+
+  componentDidMount() {
+    if (this.props.formType === "edit") {
+
+      this.setState({
+        username: this.props.currentUser.username,
+        imageUrl: this.props.currentUser.avatar_url
+      })
+    }
   }
 
   update(field) {

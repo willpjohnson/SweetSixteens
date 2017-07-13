@@ -6,9 +6,11 @@ import { receiveUser } from '../actions/user_actions';
 const mapStateToProps = (state, ownProps) => {
   const userId = parseInt(ownProps.match.params.id);
   const user = state.user;
+  const currentUser = state.session.currentUser;
   return({
     userId,
-    user
+    user,
+    currentUser
   });
 };
 

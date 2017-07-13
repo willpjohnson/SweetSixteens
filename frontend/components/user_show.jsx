@@ -10,13 +10,23 @@ class UserShow extends React.Component {
     this.props.receiveUser(this.props.userId);
   }
 
-  componentWillReceiveProps(nextProps) {
+  componentWillReceiveProps(nextProps) { 
     if (this.props.user.username !== nextProps.user.username) {
       this.props.receiveUser(nextProps.userId);
     }
   }
 
   render() {
+    let currentUser = this.props.currentUser;
+    let editButton;
+    if (currentUser && (this.props.userId === currentUser.id) && (currentUser.username !== 'Guest')) {
+      editButton = (<Link to={`${this.props.location.pathname}?edit=true`} className="user-show-edit-button">
+        <i className="fa fa-pencil" aria-hidden="true"></i>Edit
+      </Link>);
+    } else {
+      editButton = <div></div>;
+    }
+
     if (this.props.user.id === this.props.userId) {
       return(
         <div className="user-show-div">
@@ -27,9 +37,7 @@ class UserShow extends React.Component {
           <div className="user-show-info-div">
             <img className="user-avatar-image" src={this.props.user.avatar_url}></img>
             <h1>@{this.props.user.username}</h1>
-            <Link to={`${this.props.location.pathname}?edit=true`} className="user-show-edit-button">
-              <i className="fa fa-pencil" aria-hidden="true"></i>Edit
-            </Link>
+            {editButton}
           </div>
         </div>
       );

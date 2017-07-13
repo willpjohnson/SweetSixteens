@@ -11,6 +11,7 @@ const mapStateToProps = (state, ownProps) => {
   return({
     loggedIn: Boolean(state.session.currentUser.id),
     errors: state.session.errors,
+    currentUser: state.session.currentUser,
     currentUserId: state.session.currentUser.id,
     currentlyViewedUser: state.user,
     formType
