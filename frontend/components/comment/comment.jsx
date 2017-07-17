@@ -152,7 +152,7 @@ class Comment extends React.Component {
               <img src={comment.author_pic} />
               <h1>{comment.author}</h1>
             </div></Link>
-            <h2>{this.timeSince(comment.created_at)}</h2>
+          <p className="timestamp">{this.timeSince(comment.created_at)}</p>
           </div>
           {comment.body}<br />
           <div className="icon-div">
@@ -166,7 +166,7 @@ class Comment extends React.Component {
     });
 
     let enterComment;
-    if (this.props.currentUser) {
+    if (this.props.currentUser.id) {
       enterComment = (
         <form onSubmit={this.handleSubmitComment}>
           <textarea

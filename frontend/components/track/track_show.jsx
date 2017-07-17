@@ -72,15 +72,26 @@ class TrackShow extends React.Component {
   annotationArea() {
     let annotationArea;
     if (this.state.displayForm) {
-      annotationArea = (
-        <div className="annotation-form-div">
-          <form onSubmit={this.handleSubmit} className="annotation-form">
-            <textarea value={this.state.annoInput} onChange={this.update()} className="annotation-form-input" placeholder="Write your own annotation..."/>
-            <button className="annotation-form-submit-button">Save</button>
+      if (this.props.currentUser.id) {
+        annotationArea = (
+          <div className="annotation-form-div">
+            <form onSubmit={this.handleSubmit} className="annotation-form">
+              <textarea value={this.state.annoInput} onChange={this.update()} className="annotation-form-input" placeholder="Write your own annotation..."/>
+              <button className="annotation-form-submit-button">Save</button>
+              <p className="annotation-form-exit-button" onClick={this.exitForm}><i className="fa fa-times" aria-hidden="true"></i></p>
+            </form>
+          </div>
+        );
+      } else {
+        annotationArea = (
+          <div className="annotation-form-div-no-user">
+            <Link to={`${this.props.location.pathname}?login=true`} className="comment-not-logged-in-html"><div>
+              <h1 className="log-in-to-leave-a-comment">LOG IN TO LEAVE AN ANNOTATION</h1>
+            </div></Link>
             <p className="annotation-form-exit-button" onClick={this.exitForm}><i className="fa fa-times" aria-hidden="true"></i></p>
-          </form>
-        </div>
-      );
+          </div>
+        )
+      }
     } else {
       annotationArea = (
         <AnnotationContainer trackId={this.props.track.id}/>

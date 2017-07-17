@@ -27,6 +27,18 @@ class SessionForm extends React.Component {
     }
   }
 
+  componentWillReceiveProps(nextProps) {
+    if (nextProps.formType !== this.props.formType) {
+      this.props.clearErrors();
+      this.setState({
+        username: "",
+        password: "",
+        imageFile: undefined,
+        imageUrl: undefined
+      });
+    }
+  }
+
   update(field) {
     return e => {
       this.setState({[field]: e.currentTarget.value});
@@ -47,6 +59,7 @@ class SessionForm extends React.Component {
 
   handleExit(e) {
     e.preventDefault();
+    this.props.clearErrors();
     this.props.history.replace(this.props.location.pathname);
   }
 
@@ -66,6 +79,8 @@ class SessionForm extends React.Component {
   }
 
   render() {
+    document.body.scrollTop = 0;
+
     let buttonText;
     let headerText;
     let footerText;

@@ -61,7 +61,7 @@ class Navbar extends React.Component {
     return (
       <div className="navbar-div">
         <div className="search-bar-div">
-          <input onChange={this.updateSearch()} value={this.state.search_text} className="search-bar" placeholder="Search..."></input>
+          <input onChange={this.updateSearch()} value={this.state.search_text} className="search-bar" placeholder="Search by title..."></input>
           <p className="search-icon"><i className="fa fa-search" aria-hidden="true"></i></p>
           <SearchIndex searchText={this.state.search_text}/>
         </div>

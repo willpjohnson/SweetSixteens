@@ -5,6 +5,7 @@ import { receiveUser } from './user_actions';
 export const RECEIVE_CURRENT_USER = 'RECEIVE_CURRENT_USER';
 export const RECEIVE_NULL_USER = 'RECEIVE_NULL_USER';
 export const RECEIVE_ERRORS = 'RECEIVE_ERRORS';
+export const CLEAR_ERRORS = 'CLEAR_ERRORS';
 
 export const login = (formData) => dispatch => {
   return APIUtil.login(formData).then(
@@ -57,3 +58,9 @@ export const receiveErrors = (errors) => {
     errors
   });
 };
+
+export const clearErrors = () => {
+  return({
+    type: CLEAR_ERRORS
+  })
+}

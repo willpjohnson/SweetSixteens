@@ -1,6 +1,6 @@
 import merge from 'lodash/merge';
 
-import { RECEIVE_CURRENT_USER, RECEIVE_NULL_USER, RECEIVE_ERRORS } from '../actions/session_actions';
+import { RECEIVE_CURRENT_USER, RECEIVE_NULL_USER, RECEIVE_ERRORS, CLEAR_ERRORS } from '../actions/session_actions';
 import { RECEIVE_ANNOTATION_VOTE, RECEIVE_COMMENT_VOTE, REMOVE_ANNOTATION_VOTE, REMOVE_COMMENT_VOTE } from '../actions/vote_actions';
 
 const defaultState = {
@@ -31,6 +31,10 @@ const SessionReducer = (state = defaultState, action) => {
     case RECEIVE_ERRORS:
       const errors = action.errors;
       return merge({}, defaultState, { errors });
+    case CLEAR_ERRORS:
+      newState = merge({}, state);
+      newState.errors = [];
+      return newState;
     case RECEIVE_ANNOTATION_VOTE:
       newState = merge({}, state);
       annoId = action.vote.votable_id;
