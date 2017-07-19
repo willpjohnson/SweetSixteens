@@ -1,8 +1,8 @@
 # SweetSixteens
 
-[SweetSixteens][heroku]
+[SweetSixteens][live]
 
-[heroku]: http://sweetsixteens.herokuapp.com/#/
+[live]: http://sweetsixteens.life
 
 SweetSixteens is a full-stack web application inspired by Genius.  It utilizes Ruby on Rails on the backend, a PostgreSQL database, and React.js with a Redux architectural framework on the frontend.  
 
@@ -117,4 +117,4 @@ I would like to add a robust tagging system where users can tag tracks with genr
 
 ### Streaming
 
-The track pages could benefit from having a streaming component to play audio or video of the track in question while you read the lyrics and annotations. 
+The track pages could benefit from having a streaming component to play audio or video of the track in question while you read the lyrics and annotations.

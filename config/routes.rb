@@ -9,7 +9,7 @@ Rails.application.routes.draw do
     resources :annotations, except: [:index] do
       resources :comments, only: [:index]
     end
-    resources :comments, except: [:index]
+    resources :comments
     resources :votes, only: [:create, :destroy]
   end
 

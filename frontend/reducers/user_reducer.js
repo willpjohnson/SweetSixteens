@@ -1,6 +1,7 @@
 import merge from 'lodash/merge';
+import values from 'lodash/values';
 
-import { RECEIVE_USER } from '../actions/user_actions';
+import { RECEIVE_USER, RECEIVE_CONTRIBUTIONS } from '../actions/user_actions';
 
 const defaultState = {
   avatar_url: null,
@@ -9,7 +10,8 @@ const defaultState = {
   votes: {
     Annotation: {},
     Comment: {}
-  }
+  },
+  contributions: []
 };
 
 const UserReducer = (state = defaultState, action) => {
@@ -19,6 +21,10 @@ const UserReducer = (state = defaultState, action) => {
   switch (action.type) {
     case RECEIVE_USER:
       newState = merge({}, state, action.user);
+      return newState;
+    case RECEIVE_CONTRIBUTIONS:
+      newState = merge({}, state, action.user);
+      newState.contributions = values(action.contributions);
       return newState;
     default:
       return state;

@@ -1,10 +1,15 @@
 class Api::CommentsController < ApplicationController
   def index
-    if params[:annotation_id]
-      @comments = Comment.where(commentable_id: params[:annotation_id], commentable_type: "Annotation")
+    if params[:user_id]
+      @comments = Comment.where(author_id: params[:user_id]).limit(10)
     else
-      @comments = Comment.where(commentable_id: params[:track_id], commentable_type: "Track")
+      if params[:annotation_id]
+        @comments = Comment.where(commentable_id: params[:annotation_id], commentable_type: "Annotation")
+      else
+        @comments = Comment.where(commentable_id: params[:track_id], commentable_type: "Track")
+      end
     end
+
     render :index
   end
 

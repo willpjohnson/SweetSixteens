@@ -63,3 +63,46 @@
   cursor: pointer;
   padding: 4px;
 }
+
+.user-show-contributions-div {
+  width: 35%;
+  margin-left: 45%;
+  margin-top: 20px;
+}
+
+.user-show-contributions-div h1 {
+  font-size: 14px;
+  color: #969696;
+  letter-spacing: 0.8px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #969696;
+}
+
+.contributions {
+  margin-top: 30px;
+}
+
+.contribution-date {
+  font-size: 14px;
+  color: #969696;
+}
+
+.contribution-body {
+  position: relative;
+  margin: 10px 0;
+  padding-left: 50px;
+}
+
+.contribution-body-text {
+  margin: 10px;
+  padding: 10px;
+  background-color: #c9c9ff;
+  display: inline-block;
+  border-radius: 10px;
+}
+
+.fa-comment {
+  position: absolute;
+  left: 10px;
+  color: #969696;
+}
