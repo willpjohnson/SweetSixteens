@@ -47,13 +47,14 @@ class NewTrackForm extends React.Component {
     let formData = new FormData();
     formData.append("track[artist]", this.state.artist);
     formData.append("track[title]", this.state.title);
-    // formData.append("track[primaryTag]", this.state.primaryTag);
+    formData.append("track[primary_tag]", this.state.primaryTag);
     formData.append("track[body]", this.state.lyrics);
     formData.append("track[author_id]", this.state.author_id);
     formData.append("track[image]", this.state.imageFile);
 
     this.props.createTrack(formData).then( (track) => {
       this.props.history.push(`/tracks/${track.id}`);
+      document.body.scrollTop = 0;
     });
   }
 

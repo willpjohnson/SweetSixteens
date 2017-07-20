@@ -20,12 +20,21 @@ class Api::TracksController < ApplicationController
   end
 
   def create
+    primary_tag = tag_params[:primary_tag]
     @track = Track.new(track_params)
+
     if @track.save
+      create_tag(primary_tag)
       render :show
     else
       render json: @track.errors.full_messages, status: 422
     end
+  end
+
+  def create_tag(primary_tag)
+    tag = Tag.find_by(name: primary_tag)
+    tagging = Tagging.new({tag_id: tag.id, track_id: @track.id})
+    tagging.save
   end
 
   def destroy
@@ -37,5 +46,9 @@ class Api::TracksController < ApplicationController
   private
   def track_params
     params.require(:track).permit(:author_id, :title, :body, :artist, :image)
+  end
+
+  def tag_params
+    params.require(:track).permit(:primary_tag)
   end
 end
